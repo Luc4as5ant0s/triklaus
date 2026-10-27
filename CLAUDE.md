@@ -44,6 +44,6 @@ Emphasis (the colour on the site): `volume`, `vo2`, `threshold`, `specific`, `ta
 3. Run `node scripts/check.mjs` (`--weeks` for every week, `--week YYYY-MM-DD` for one). Fix errors. Warnings are guardrails: either fix them, or keep them deliberately and say why in the log.
 4. Run `node scripts/build.mjs` (works without Garmin data) if you changed the site or want to eyeball the page (`dist/index.html`).
 5. Append to `plan/decisions.md`: `## YYYY-MM-DD · title`, then **Lucas:** what he said, **Changed:** what moved, **Why:** the physiology.
-6. Summarise the change for Lucas (blocks moved, sessions changed, why). When he's happy with it, commit with a message that says what changed in training terms and push to `main`. The Action rebuilds with fresh Garmin data and deploys in ~1 min.
+6. Commit with a message that says what changed in training terms and **push straight to `main`**: no branches, no PRs; this repo is Lucas's own. The Action rebuilds with fresh Garmin data and deploys in ~1 min. Then summarise the change for Lucas (blocks moved, sessions changed, why). If a change touches `.github/workflows/`, push over SSH (`git@github.com:Luc4as5ant0s/triklaus.git`), because the gh token lacks the `workflow` scope.
 
 To see his actual training in a conversation, sync locally: put `GARMIN_API_KEY=...` in `.env` (gitignored) and run `node --env-file=.env scripts/sync-garmin.mjs` then `node scripts/build.mjs`. Raw data stays in `data/raw/` (gitignored, never commit it).
