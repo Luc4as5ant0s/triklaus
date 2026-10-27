@@ -242,18 +242,23 @@
     });
 
     // events
+    // labels go right of the marker unless the next marker is too close, then left
+    const evs = D.events.map((ev) => ({ ev, x: xOfDate(ev.date) })).filter((e) => e.x != null).sort((p, q) => p.x - q.x);
+    const side = new Map();
+    evs.forEach((e, k) => { const nx = evs[k + 1]?.x; side.set(e.ev, nx != null && nx - e.x < e.ev.short.length * 6.6 + 24 ? 'left' : 'right'); });
+    const lbl = (ev, x) => side.get(ev) === 'left' ? `x="${x - 10}" text-anchor="end"` : `x="${x + 10}"`;
     for (const ev of D.events) {
       const x = xOfDate(ev.date); if (x == null) continue;
       const a = ev.priority === 'A';
       if (ev.past) { // a result: filled dot + time
         s += `<line x1="${x}" x2="${x}" y1="${Y.ev + 16}" y2="${Y.base}" stroke="var(--text-muted)" stroke-width="1" stroke-dasharray="2 3"/>
           <circle cx="${x}" cy="${Y.ev + 9}" r="5.5" fill="var(--text-primary)"/>
-          <text class="t-ev" x="${x + 9}" y="${Y.ev + 14}">${esc(ev.short)}</text>`;
+          <text class="t-ev" ${lbl(ev, x)} y="${Y.ev + 14}">${esc(ev.short)}</text>`;
         continue;
       }
       s += `<line x1="${x}" x2="${x}" y1="${Y.ev + 16}" y2="${Y.base}" stroke="var(--text-primary)" stroke-width="1" stroke-dasharray="${a ? '0' : '3 3'}" opacity="${a ? .8 : .45}"/>
         <path d="M${x},${Y.ev + 3} l6,6 l-6,6 l-6,-6Z" fill="${a ? 'var(--text-primary)' : 'var(--surface-1)'}" stroke="var(--text-primary)" stroke-width="1.5"/>
-        <text class="t-ev" x="${x + 10}" y="${Y.ev + 14}">${esc(ev.short)}${ev.tentative ? '?' : ''}</text>`;
+        <text class="t-ev" ${lbl(ev, x)} y="${Y.ev + 14}">${esc(ev.short)}${ev.tentative ? '?' : ''}</text>`;
     }
     // today
     const tx = xOfDate(D.today);
@@ -357,7 +362,7 @@
         <h3>${fmt(Wk.w)} – ${fmt(addDays(Wk.w, 6), true)}</h3>
         <div class="sub">${mc ? `${esc(mc.name)} › ` : ''}${ms ? `<b>${esc(ms.name)}</b> · week ${Wk.idx} of ${Wk.of} · ${KIND[Wk.kind]}` : 'Before the plan: Garmin activities only'}</div></div>
         <div class="nav"><button id="wk-prev" ${i === 0 ? 'disabled' : ''}>‹ prev</button><button id="wk-now" ${isCur ? 'disabled' : ''}>today</button><button id="wk-next" ${i === weeks.length - 1 ? 'disabled' : ''}>next ›</button></div></div>
-      <div class="wk-sum">${sum.join('')}</div>
+      <div class="wk-sum">${sum.map((x) => `<span>${x}</span>`).join('')}</div>
       ${Wk.note ? `<div class="wk-note">${esc(Wk.note)}</div>` : ms && Wk.idx === 1 ? `<div class="wk-note"><b>${esc(ms.name)}:</b> ${esc(ms.focus)}</div>` : ''}
       <div class="days">${days.join('')}</div>
       <p class="muted" style="font-size:12px;margin-top:10px">Tap a session for the set, the how and the why. Left edge colour = the system it targets; thick edge = key session.</p>`;

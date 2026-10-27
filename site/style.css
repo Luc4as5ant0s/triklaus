@@ -122,7 +122,7 @@ section h2 { font-size: 26px; font-weight: 800; }
 .nav button { border: 1px solid var(--line); background: var(--surface-1); border-radius: 999px; padding: 6px 12px; cursor: pointer; font: 500 12px var(--mono); }
 .nav button:disabled { opacity: .4; cursor: default; }
 .wk-sum { display: flex; flex-wrap: wrap; gap: 8px 24px; margin: 14px 0; font-size: 13px; color: var(--text-secondary); }
-.wk-sum b { color: var(--text-primary); font-family: var(--mono); font-weight: 600; }
+.wk-sum b { color: var(--text-primary); font-family: var(--mono); font-weight: 600; margin-left: 4px; }
 .wk-note { background: var(--surface-2); border-radius: 10px; padding: 10px 14px; font-size: 14px; margin-bottom: 14px; color: var(--text-secondary); }
 .days { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 8px; }
 .day { background: var(--surface-1); border: 1px solid var(--line); border-radius: 12px; padding: 10px; min-width: 0; display: flex; flex-direction: column; gap: 8px; }
