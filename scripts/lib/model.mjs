@@ -93,6 +93,11 @@ export function profileOf(acts, athlete, zones, gprofile, today) {
     if (xs.length >= 3) { lt1Pace = Math.round(median(xs)); est.lt1Pace = `median pace of ${xs.length} outdoor runs at ~LT1 HR, last 42 d`; }
     else if (vV) { lt1Pace = Math.round(paceAt(0.75)); est.lt1Pace = '75% of vVO2max'; }
   }
+  // No Garmin VO2max / LT speed: chain from LT1 pace with typical ratios (LT1 ≈ 85% of LT2 speed, LT2 ≈ 88% of vVO2max)
+  if (lt2Pace == null && lt1Pace) { lt2Pace = Math.round(lt1Pace * 0.85); est.lt2Pace = 'LT1 pace ÷ 1.18 (LT1 ≈ 85% of LT2 speed, typical)'; }
+  let vVO2Pace = vV ? paceAt(1) : null;
+  if (vVO2Pace == null && lt2Pace) { vVO2Pace = Math.round(lt2Pace * 0.88); est.vVO2Pace = 'LT2 pace × 0.88 (LT2 ≈ 88% of vVO2max, typical)'; }
+  if (mile == null && vVO2Pace) { mile = Math.round(vVO2Pace * 1.609); est.mile = est.vVO2Pace ? 'at vVO2max pace (chained estimate)' : est.mile; }
 
   // swim
   let css = parseMMSS(cfg(P.swim, 'css'));
@@ -104,7 +109,7 @@ export function profileOf(acts, athlete, zones, gprofile, today) {
 
   return {
     bike: { lt1W, lt2W, p5W: p5, tested: P.bike?.tested || null, source: P.bike?.source || null },
-    run: { lt1Hr, lt2Hr, lt1Pace, lt2Pace, mile, vo2: r1(vo2run), vVO2Pace: paceAt(1), tested: P.run?.tested || null, source: P.run?.source || null },
+    run: { lt1Hr, lt2Hr, lt1Pace, lt2Pace, mile, vo2: r1(vo2run), vVO2Pace, tested: P.run?.tested || null, source: P.run?.source || null },
     swim: { css, t400, tested: P.swim?.tested || null, source: P.swim?.source || null },
     est,
   };
@@ -195,5 +200,12 @@ export function trendsOf(acts, lt1Hr, from, today) {
     const xs = easy.filter((a) => toDay(a.date) >= start && toDay(a.date) < end).map((a) => (a.km * 1000) / (a.sec / 60) / a.avgHR);
     if (xs.length) eff.push({ d: w, v: Math.round(median(xs) * 1000) / 1000, n: xs.length });
   }
-  return { vo2: { run: dedupe(vo2.run), bike: dedupe(vo2.bike) }, eff };
+  // Deckard's ceiling anchor: best 5′ bike power over the trailing 42 days, weekly
+  const p5 = [];
+  for (let w = mondayOf(from); w <= mondayOf(today); w = addDays(w, 7)) {
+    const end = toDay(w) + 7 * DAY, start = end - 42 * DAY;
+    const best = Math.max(0, ...acts.filter((a) => a.sport === 'bike' && a.p5 && toDay(a.date) >= start && toDay(a.date) < end).map((a) => a.p5));
+    if (best) p5.push({ d: w, v: Math.round(best) });
+  }
+  return { vo2: { run: dedupe(vo2.run), bike: dedupe(vo2.bike) }, eff, p5 };
 }

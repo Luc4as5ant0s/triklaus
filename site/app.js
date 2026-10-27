@@ -437,7 +437,7 @@
       <div class="verdict">The 1 mile test replaces the estimate. A small LT2 gap means keep building the ceiling.</div>
       <dl class="kv"><dt>LT1 HR${estB('lt1Hr')}</dt><dd>${r.lt1Hr ?? '–'} bpm</dd><dt>LT2 HR${estB('lt2Hr')}</dt><dd>${r.lt2Hr ?? '–'} bpm</dd>
       <dt>LT1 pace${estB('lt1Pace')}</dt><dd>${mmss(r.lt1Pace)}/km</dd><dt>LT2 pace${estB('lt2Pace')}</dt><dd>${mmss(r.lt2Pace)}/km</dd>
-      <dt>Mile${estB('mile')}</dt><dd>${mmss(r.mile)}</dd><dt>Garmin VO2max</dt><dd>${r.vo2 ?? '–'}</dd></dl></div>`;
+      <dt>vVO2max pace${estB('vVO2Pace')}</dt><dd>${mmss(r.vVO2Pace)}/km</dd><dt>Mile${estB('mile')}</dt><dd>${mmss(r.mile)}</dd>${r.vo2 ? `<dt>Garmin VO2max</dt><dd>${r.vo2}</dd>` : ''}</dl></div>`;
     const swimCard = `<div class="card"><div class="lbl">Swim</div><h3>CSS ${mmss(sw.css)}/100 m</h3>
       <dl class="kv"><dt>CSS${estB('css')}</dt><dd>${mmss(sw.css)}/100 m</dd><dt>400 m TT</dt><dd>${sw.t400 ? mmss(sw.t400) : 'not yet'}</dd><dt>Tested</dt><dd>${sw.tested ? esc(sw.tested) : 'not yet'}</dd></dl>
       <div class="verdict">Deckard profiles the swim with a ~500 yd TT. Here a 400 + 200 also gives CSS.</div>
@@ -483,7 +483,8 @@
   function renderTrends() {
     const v = D.trends.vo2.run;
     $('#trends').innerHTML =
-      lineChart(v, { title: 'VO2max (run)', sub: 'The ceiling · Garmin estimate per run', unit: 'ml/kg/min', fmtV: (x) => (Math.round(x * 10) / 10).toString(), color: cvar('vo2') }) +
+      lineChart(D.trends.p5, { title: '5′ power', sub: 'The ceiling · best 5′ bike power, trailing 42 d', unit: 'W', fmtV: (x) => String(Math.round(x)), color: cvar('vo2') }) +
+      (v.length > 1 ? lineChart(v, { title: 'VO2max (run)', sub: 'The ceiling · Garmin estimate per run', unit: 'ml/kg/min', fmtV: (x) => (Math.round(x * 10) / 10).toString(), color: cvar('vo2') }) : '') +
       lineChart(D.trends.eff, { title: 'Aerobic efficiency', sub: 'Easy runs under LT1 HR · m/min ÷ bpm, 3-wk median', unit: '', fmtV: (x) => x.toFixed(3), color: cvar('volume') });
   }
 

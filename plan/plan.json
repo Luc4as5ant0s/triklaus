@@ -20,7 +20,7 @@
       "id": "ceiling", "name": "Raise the ceiling", "emphasis": "volume",
       "goal": "VO2max ↑ · keep VLamax low · LT1 ↑",
       "physiology": { "vo2max": "up", "vlamax": "down", "lt1": "up", "lt2": "hold" },
-      "why": "Deckard: maximal aerobic power is the ceiling everything else hangs from, and most age-groupers are far from their genetic one. Your estimated LT2 already sits at ~83% of 5′ power, above the ~75% 'standard' profile, so the gap is small and the cheapest gains are in raising the ceiling, not pushing threshold toward it. Lots of easy volume under LT1, one or two VO2 sessions a week, almost nothing in between."
+      "why": "Deckard: maximal aerobic power is the ceiling everything else hangs from, and most age-groupers are far from their genetic one. Your estimated LT2 (90% of best 20′ = 250 W) sits at ~78% of 5′ power (321 W), a touch above the ~75% 'standard' profile. The gap isn't big, so the cheapest gains are in raising the ceiling, not pushing threshold toward it. Lots of easy volume under LT1, one or two VO2 sessions a week, almost nothing in between."
     },
     {
       "id": "marathon", "name": "Convert for the marathon", "emphasis": "threshold",

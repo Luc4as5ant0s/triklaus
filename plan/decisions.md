@@ -10,7 +10,7 @@ Newest at the bottom. Each entry: what Lucas said, what changed, and why (with t
 
 **Why:**
 - Deckard: LT2 is an *outcome* of VO2max and VLamax, not a system you train directly. Build the ceiling first; long, easy work under LT1 is the main lever, plus 1–2 VO2 sessions a week (30/15s with pedalled recoveries).
-- From Garmin data, LT2 is estimated at ~83% of 5′ bike power, above the ~75% "standard" profile. The gap is small, so threshold work buys little now and the ceiling is the bottleneck. This is an *estimate*; the first two weeks test it (5′ bike, 20′ bike, 1 mile, 400 m swim).
+- From Garmin data (last 90 d): 5′ = 321 W, LT2 ≈ 90% of best 20′ = 250 W, so LT2 sits at ~78% of 5′, a touch above the ~75% "standard" profile. The gap isn't big, so threshold work buys little now and the ceiling is the bottleneck. These are *estimates*; the first two weeks test them (5′ bike, 20′ bike, 1 mile, 400 m swim).
 - Bike volume fell from ~9 h to 2 h/week in October, so the first block reloads volume before any VO2 block.
 - Threshold arrives in the marathon block, where it does double duty: it raises LT2 utilization and lowers VLamax, both of which a marathon wants.
 - The 70.3 build opens with Deckard's 7-week bike VO2max block. He places it "right after a main race when there's a long runway", then converts it with torque and threshold work.
