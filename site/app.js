@@ -257,7 +257,7 @@
     sc.innerHTML = `<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="Training timeline: blocks and weekly hours, past actual and future planned">${s}</svg>`;
     // y-axis labels pinned to the visible left edge
     let ax = '';
-    for (let v = step; v <= ymax; v += step) ax += `<div style="position:absolute;left:6px;top:${yv(v) - 7}px" class="lbl">${dayMode ? v / 60 + 'h' : v + 'h'}</div>`;
+    for (let v = step; v <= ymax; v += step) ax += `<div style="position:absolute;left:6px;top:${yv(v) - 8}px;background:color-mix(in srgb, var(--surface-1) 85%, transparent);border-radius:4px;padding:0 4px" class="lbl">${dayMode ? v / 60 + 'h' : v + 'h'}</div>`;
     let ov = $('#tl-axis'); if (!ov) { ov = document.createElement('div'); ov.id = 'tl-axis'; ov.style.cssText = 'position:absolute;inset:0 auto auto 0;pointer-events:none;'; $('.tl').appendChild(ov); }
     ov.innerHTML = ax;
 
