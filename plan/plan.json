@@ -1,213 +1,459 @@
 {
   "_comment": "The plan. Edited in conversation with Claude (see CLAUDE.md). Mesos are contiguous; each starts on a Monday and lasts pattern.length weeks. Pattern codes: b build, p peak, r recover, t test, tp taper, race race week, x reset. physiology: up | hold | down.",
-
   "events": [
-    { "id": "ttt", "name": "Travessia Torres–Tramandaí", "short": "TTT", "date": "2027-01-16", "priority": "C", "sport": "run",
-      "note": "Octet relay, ~15 km leg on sand. Side quest: a hard workout with friends, no taper." },
-    { "id": "marathon", "name": "Marathon", "short": "Marathon", "date": "2027-06-06", "priority": "A", "sport": "run", "tentative": true,
-      "note": "May/June 2027, race not picked yet. Placeholder is the first Sunday of June; move it when you choose one." },
-    { "id": "half", "name": "70.3", "short": "70.3", "date": "2027-10-17", "priority": "A", "sport": "tri", "tentative": true,
-      "note": "October 2027, race not picked yet. Placeholder date." }
+    {
+      "id": "mar25",
+      "name": "Marathon 2025",
+      "short": "Marathon 3:32",
+      "date": "2025-06-08",
+      "priority": "A",
+      "sport": "run",
+      "past": true,
+      "result": "3:32:23",
+      "note": "42.6 km, avg HR 176."
+    },
+    {
+      "id": "osorio26",
+      "name": "Osório multisport",
+      "short": "Osório 3:18",
+      "date": "2026-09-27",
+      "priority": "B",
+      "sport": "tri",
+      "past": true,
+      "result": "3:18:39"
+    },
+    {
+      "id": "floripa703",
+      "name": "70.3 Florianópolis",
+      "short": "70.3 4:27",
+      "date": "2026-10-18",
+      "priority": "A",
+      "sport": "tri",
+      "past": true,
+      "result": "4:27:35",
+      "note": "The race that closed the 2026 season."
+    },
+    {
+      "id": "ttt",
+      "name": "Travessia Torres–Tramandaí",
+      "short": "TTT",
+      "date": "2027-01-16",
+      "priority": "C",
+      "sport": "run",
+      "note": "Octet relay, ~15 km leg on sand. Side quest: a hard workout with friends, no taper."
+    },
+    {
+      "id": "marathon",
+      "name": "Marathon",
+      "short": "Marathon",
+      "date": "2027-06-06",
+      "priority": "A",
+      "sport": "run",
+      "tentative": true,
+      "note": "May/June 2027, race not picked yet. Placeholder is the first Sunday of June; move it when you choose one."
+    },
+    {
+      "id": "half",
+      "name": "70.3",
+      "short": "70.3",
+      "date": "2027-10-17",
+      "priority": "A",
+      "sport": "tri",
+      "tentative": true,
+      "note": "October 2027, race not picked yet. Placeholder date."
+    }
   ],
-
   "macros": [
     {
-      "id": "history", "name": "Before the plan", "start": "2026-05-04", "end": "2026-10-25", "past": true,
-      "goal": "Unstructured tri base, TTT-oriented",
-      "why": "What actually happened: ~13–17 h/wk in Aug–Sep, then bike volume collapsed in October (7.6 → 4.5 → 2 h)."
+      "id": "history",
+      "name": "2025–26 season",
+      "start": "2025-06-02",
+      "end": "2026-10-25",
+      "past": true,
+      "goal": "Marathon 3:32 → tri build → 70.3 Florianópolis 4:27",
+      "why": "What actually happened. Volume grew from ~5 h/wk (early 2025) to 14.6 h/wk in Q3 2026 (best 4 weeks 16.5 h/wk, 12 weeks 15.6 h/wk, peak 18.3 h), about 15 sessions a week with doubles. October is the 70.3 taper and recovery, not a collapse."
     },
     {
-      "id": "ceiling", "name": "Raise the ceiling", "emphasis": "volume",
+      "id": "ceiling",
+      "name": "Raise the ceiling",
+      "emphasis": "volume",
       "goal": "VO2max ↑ · keep VLamax low · LT1 ↑",
-      "physiology": { "vo2max": "up", "vlamax": "down", "lt1": "up", "lt2": "hold" },
-      "why": "Deckard: maximal aerobic power is the ceiling everything else hangs from, and most age-groupers are far from their genetic one. Your estimated LT2 (90% of best 20′ = 250 W) sits at ~78% of 5′ power (321 W), a touch above the ~75% 'standard' profile. The gap isn't big, so the cheapest gains are in raising the ceiling, not pushing threshold toward it. Lots of easy volume under LT1, one or two VO2 sessions a week, almost nothing in between."
+      "physiology": {
+        "vo2max": "up",
+        "vlamax": "down",
+        "lt1": "up",
+        "lt2": "hold"
+      },
+      "why": "Deckard: maximal aerobic power is the ceiling everything else hangs from, and most age-groupers are far from their genetic one. Your estimated LT2 (90% of best 20′ = 250 W) sits at ~78% of 5′ power (321 W), a touch above the ~75% 'standard' profile, so the cheapest gains are in raising the ceiling. He puts a VO2 block right after a main race with a long runway, which is exactly now, after Florianópolis. Then the biggest easy volume you've done: build weeks start at your Jul–Sep norm (~15–16 h) and climb past it in steps of 10% or less."
     },
     {
-      "id": "marathon", "name": "Convert for the marathon", "emphasis": "threshold",
+      "id": "marathon",
+      "name": "Convert for the marathon",
+      "emphasis": "threshold",
       "goal": "LT2 ↑ toward the ceiling · durability · marathon pace",
-      "physiology": { "vo2max": "hold", "vlamax": "down", "lt1": "up", "lt2": "up" },
+      "physiology": {
+        "vo2max": "hold",
+        "vlamax": "down",
+        "lt1": "up",
+        "lt2": "up"
+      },
       "why": "With a higher ceiling, threshold work now converts it into usable speed. Threshold work also pulls VLamax down, which a marathon wants (more fat, less lactate at MP). Run-led; bike and swim drop to maintenance."
     },
     {
-      "id": "reset", "name": "Reset", "emphasis": "recovery",
+      "id": "reset",
+      "name": "Reset",
+      "emphasis": "recovery",
       "goal": "Recover from the marathon · reopen swim and bike",
-      "physiology": { "vo2max": "hold", "vlamax": "hold", "lt1": "hold", "lt2": "hold" },
+      "physiology": {
+        "vo2max": "hold",
+        "vlamax": "hold",
+        "lt1": "hold",
+        "lt2": "hold"
+      },
       "why": "Marathons cost 2–3 weeks of real recovery. Nothing structured; swim and ride for fun."
     },
     {
-      "id": "half", "name": "Half-distance: ceiling on the bike, then specificity", "emphasis": "vo2",
+      "id": "half",
+      "name": "Half-distance: ceiling on the bike, then specificity",
+      "emphasis": "vo2",
       "goal": "Bike VO2max ↑ (7-wk block) → LT2 / 70.3 power ↑ · VLamax ↓",
-      "physiology": { "vo2max": "up", "vlamax": "down", "lt1": "up", "lt2": "up" },
+      "physiology": {
+        "vo2max": "up",
+        "vlamax": "down",
+        "lt1": "up",
+        "lt2": "up"
+      },
       "why": "Deckard recommends a VO2 block right after a main race when there's a long runway. The bike ceiling built in July–August then gets converted with torque and threshold work into 70.3 power, a large share of time at race pace."
     },
     {
-      "id": "offseason", "name": "Off-season", "emphasis": "recovery",
+      "id": "offseason",
+      "name": "Off-season",
+      "emphasis": "recovery",
       "goal": "Recover · decide 2028",
-      "physiology": { "vo2max": "hold", "vlamax": "hold", "lt1": "hold", "lt2": "hold" },
+      "physiology": {
+        "vo2max": "hold",
+        "vlamax": "hold",
+        "lt1": "hold",
+        "lt2": "hold"
+      },
       "why": "A real break before the next ceiling block."
     }
   ],
-
   "mesos": [
-    { "id": "profile", "macro": "ceiling", "name": "Profile & reload", "start": "2026-10-26",
-      "pattern": ["t", "b"], "week": "base-volume", "emphasis": "test",
-      "focus": "Get Deckard's three numbers per sport (5′ bike, 1 mile run, 400 m swim) plus LT2 from a 20′ TT; bring bike volume back",
-      "why": "Every block after this is anchored on your physiology, not a guess. Bike volume fell from 9 h to 2 h in October, so it needs to come back before VO2 work stacks on top.",
-      "success": "All four tests done and entered in config/athlete.json; bike ≥ 5 h in week 2" },
-
-    { "id": "volume1", "macro": "ceiling", "name": "Aerobic volume I", "start": "2026-11-09",
-      "pattern": ["b", "b", "r"], "week": "base-volume", "emphasis": "volume",
-      "focus": "Everything under LT1 except one bike 30/15 session a week",
-      "why": "Volume under LT1 is Deckard's primary VO2max lever: stroke volume, capillaries, mitochondria, fat oxidation. It's also hard to overdo, unlike threshold work.",
-      "success": "Run efficiency (m/min per bpm) trending up; HR drift < 5% on the LT1 ride" },
-
-    { "id": "vo2a", "macro": "ceiling", "name": "VO2max block I", "start": "2026-11-30",
-      "pattern": ["b", "b", "b", "r"], "week": "vo2-block", "emphasis": "vo2",
-      "focus": "Two VO2 sessions a week (bike 30/15s + run hills), volume held, no threshold",
-      "why": "Concentrated high-intensity stimulus on top of the volume base (Rønnestad's block periodisation). Christmas falls in the recovery week.",
-      "success": "5′ power and 30/15 'on' power up; you can finish 3 × 13 × 30/15" },
-
-    { "id": "absorb", "macro": "ceiling", "name": "Absorb + TTT", "start": "2026-12-28",
-      "pattern": ["b", "b", "r"], "week": "base-volume", "emphasis": "volume",
-      "focus": "Two easy-volume weeks over the holidays, then the TTT relay as a hard workout in a light week",
-      "why": "Let the VO2 block land. TTT is a side quest: it sits in a recovery week, no taper.",
-      "success": "Fresh legs on 16 Jan" },
-
-    { "id": "durability", "macro": "ceiling", "name": "Aerobic volume II (durability)", "start": "2027-01-18",
-      "pattern": ["b", "b", "b", "r"], "week": "durability", "emphasis": "volume",
-      "focus": "Biggest easy volume of the year: long run toward 2h30, long ride toward 4h",
+    {
+      "id": "profile",
+      "macro": "ceiling",
+      "name": "Recover & profile",
+      "start": "2026-10-26",
+      "pattern": ["t"],
+      "week": "base-volume",
+      "emphasis": "test",
+      "focus": "Second week after Florianópolis: easy volume plus Deckard's three anchors (5′ bike, 1 mile, 400 m swim)",
+      "why": "Short maximal tests are fine 10–14 days after a 70.3, and they anchor every block that follows on your physiology instead of a guess.",
+      "success": "Tests done and entered in config/athlete.json"
+    },
+    {
+      "id": "vo2a",
+      "macro": "ceiling",
+      "name": "VO2max block I",
+      "start": "2026-11-02",
+      "pattern": ["b", "b", "b", "r"],
+      "week": "vo2-block",
+      "emphasis": "vo2",
+      "focus": "Bike 30/15s, run hills and swim VO2 every week, with volume held at your normal ~15–17 h",
+      "why": "Deckard places a VO2 block right after a main race when there's a long runway. Concentrated ceiling stimulus while you're fresh from the season (Rønnestad block periodisation).",
+      "success": "5′ power and 30/15 'on' power up; you can finish 3 × 13 × 30/15"
+    },
+    {
+      "id": "volume1",
+      "macro": "ceiling",
+      "name": "Aerobic volume I",
+      "start": "2026-11-30",
+      "pattern": ["b", "b", "b", "r"],
+      "week": "base-volume",
+      "emphasis": "volume",
+      "focus": "~16 → 18 h, all under LT1 except one 30/15 session. Christmas falls in the recovery week",
+      "why": "Volume under LT1 is Deckard's primary VO2max lever: stroke volume, capillaries, mitochondria, fat oxidation. It's also hard to overcook, unlike threshold work.",
+      "success": "Run efficiency (m/min per bpm) trending up; HR drift < 5% on the LT1 ride"
+    },
+    {
+      "id": "absorb",
+      "macro": "ceiling",
+      "name": "Holiday volume + TTT",
+      "start": "2026-12-28",
+      "pattern": ["b", "b", "r"],
+      "week": "base-volume",
+      "emphasis": "volume",
+      "focus": "Two big easy weeks over New Year, then the TTT relay as a hard workout in a light week",
+      "why": "Holidays mean time; time means easy volume. TTT is a side quest, so it sits in a recovery week with no taper.",
+      "success": "Fresh legs on 16 Jan"
+    },
+    {
+      "id": "durability",
+      "macro": "ceiling",
+      "name": "Aerobic volume II (durability)",
+      "start": "2027-01-18",
+      "pattern": ["b", "b", "b", "r"],
+      "week": "durability",
+      "emphasis": "volume",
+      "focus": "Biggest easy volume of the year, ~17.5 → 20 h: long run toward 2h20, long ride toward 3h50",
       "why": "Builds the durability the marathon will need, without adding glycolytic stress.",
-      "success": "2h30 long run under LT1 HR with < 5% drift" },
-
-    { "id": "retest", "macro": "ceiling", "name": "Retest", "start": "2027-02-15",
-      "pattern": ["t"], "week": "base-volume", "emphasis": "test",
+      "success": "2h20 long run under LT1 HR with < 5% drift"
+    },
+    {
+      "id": "retest",
+      "macro": "ceiling",
+      "name": "Retest",
+      "start": "2027-02-15",
+      "pattern": ["t"],
+      "week": "base-volume",
+      "emphasis": "test",
       "focus": "Repeat the profile tests: 5′ bike, 1 mile, 400 m, 20′ TT",
       "why": "Did the ceiling move? The LT2 : ceiling gap decides how much threshold the marathon block needs.",
-      "success": "Profile updated; marathon block adjusted to it" },
-
-    { "id": "threshold1", "macro": "marathon", "name": "Threshold I", "start": "2027-02-22",
-      "pattern": ["b", "b", "b", "r"], "week": "threshold-run", "emphasis": "threshold",
+      "success": "Profile updated; marathon block adjusted to it"
+    },
+    {
+      "id": "threshold1",
+      "macro": "marathon",
+      "name": "Threshold I",
+      "start": "2027-02-22",
+      "pattern": ["b", "b", "b", "r"],
+      "week": "threshold-run",
+      "emphasis": "threshold",
       "focus": "Deckard's track miles @ LT2 + 5′ LT2 reps inside the long run",
       "why": "LT2 is an outcome of VO2max and VLamax. Threshold volume raises utilization and nudges VLamax down.",
-      "success": "Threshold miles at the same HR getting faster" },
-
-    { "id": "mspec1", "macro": "marathon", "name": "Marathon specific I", "start": "2027-03-22",
-      "pattern": ["b", "b", "b", "r"], "week": "marathon-specific", "emphasis": "specific",
+      "success": "Threshold miles at the same HR getting faster"
+    },
+    {
+      "id": "mspec1",
+      "macro": "marathon",
+      "name": "Marathon specific I",
+      "start": "2027-03-22",
+      "pattern": ["b", "b", "b", "r"],
+      "week": "marathon-specific",
+      "emphasis": "specific",
       "focus": "Marathon pace inside the long run; MP→LT2 tempo; VO2 kept alive",
       "why": "Specificity: the time at MP grows each week while fuelling is rehearsed.",
-      "success": "3 × 5 km @ MP with HR stable" },
-
-    { "id": "mspec2", "macro": "marathon", "name": "Marathon specific II", "start": "2027-04-19",
-      "pattern": ["b", "b", "p"], "week": "marathon-specific", "emphasis": "specific",
+      "success": "3 × 5 km @ MP with HR stable"
+    },
+    {
+      "id": "mspec2",
+      "macro": "marathon",
+      "name": "Marathon specific II",
+      "start": "2027-04-19",
+      "pattern": ["b", "b", "p"],
+      "week": "marathon-specific",
+      "emphasis": "specific",
       "focus": "Peak: 18 km @ MP inside the long run",
       "why": "The last big specific stimulus before the taper.",
-      "success": "18 km @ MP done controlled" },
-
-    { "id": "mtaper", "macro": "marathon", "name": "Taper & race", "start": "2027-05-10",
-      "pattern": ["tp", "tp", "tp", "race"], "week": "marathon-specific", "emphasis": "taper",
+      "success": "18 km @ MP done controlled"
+    },
+    {
+      "id": "mtaper",
+      "macro": "marathon",
+      "name": "Taper & race",
+      "start": "2027-05-10",
+      "pattern": ["tp", "tp", "tp", "race"],
+      "week": "marathon-specific",
+      "emphasis": "taper",
       "focus": "Volume down ~20 → 35 → 50%, intensity kept, then race week",
       "why": "Shed fatigue and keep the sharpness. A three-week progressive taper plus race week suits a marathon.",
-      "success": "Race day" },
-
-    { "id": "reset", "macro": "reset", "name": "Reset", "start": "2027-06-07",
-      "pattern": ["x", "x", "x"], "week": "reset", "emphasis": "recovery",
-      "focus": "Three weeks off structure: swim, ride and run for fun",
+      "success": "Race day"
+    },
+    {
+      "id": "reset",
+      "macro": "reset",
+      "name": "Reset",
+      "start": "2027-06-07",
+      "pattern": ["x", "x"],
+      "week": "reset",
+      "emphasis": "recovery",
+      "focus": "Two weeks off structure: swim, ride and run for fun (~5 h)",
       "why": "Recover fully before the bike ceiling block.",
-      "success": "Wanting to train again" },
-
-    { "id": "reopen", "macro": "reset", "name": "Reopen", "start": "2027-06-28",
-      "pattern": ["b"], "week": "base-volume", "emphasis": "volume",
-      "focus": "One normal volume week before the VO2 block",
-      "why": "Volume comes back before intensity stacks on it.",
-      "success": "" },
-
-    { "id": "bikevo2", "macro": "half", "name": "Bike VO2max block", "start": "2027-07-05",
-      "pattern": ["b", "b", "r", "b", "b", "b", "r"], "week": "bike-vo2-block", "emphasis": "vo2",
+      "success": "Wanting to train again"
+    },
+    {
+      "id": "reopen",
+      "macro": "reset",
+      "name": "Reopen",
+      "start": "2027-06-21",
+      "pattern": ["r", "b"],
+      "week": "base-volume",
+      "emphasis": "volume",
+      "focus": "A recovery-sized week, then one normal volume week before the VO2 block",
+      "why": "Volume comes back gradually before intensity stacks on it.",
+      "success": ""
+    },
+    {
+      "id": "bikevo2",
+      "macro": "half",
+      "name": "Bike VO2max block",
+      "start": "2027-07-05",
+      "pattern": ["b", "b", "r", "b", "b", "b", "r"],
+      "week": "bike-vo2-block",
+      "emphasis": "vo2",
       "focus": "Deckard's 7-week VO2max block: 30/15s + 4′ reps on the bike, swim VO2, run maintained",
       "why": "Deckard puts this block 'right after a main race with a long runway'. The bike ceiling built here becomes 70.3 power later.",
-      "success": "5′ power +5% vs February" },
-
-    { "id": "halfbuild", "macro": "half", "name": "70.3 build", "start": "2027-08-23",
-      "pattern": ["b", "b", "b", "r"], "week": "half-build", "emphasis": "threshold",
+      "success": "5′ power +5% vs February"
+    },
+    {
+      "id": "halfbuild",
+      "macro": "half",
+      "name": "70.3 build",
+      "start": "2027-08-23",
+      "pattern": ["b", "b", "b", "r"],
+      "week": "half-build",
+      "emphasis": "threshold",
       "focus": "Torque / low-cadence threshold, run tempo, race-pace bricks, open water",
       "why": "Convert the ceiling into sustainable power. Torque work trains threshold without sitting on it and pulls VLamax down.",
-      "success": "4 × 10′ torque at 90% LT2 controlled" },
-
-    { "id": "halfspec", "macro": "half", "name": "70.3 specific", "start": "2027-09-20",
-      "pattern": ["b", "p"], "week": "half-specific", "emphasis": "specific",
+      "success": "4 × 10′ torque at 90% LT2 controlled"
+    },
+    {
+      "id": "halfspec",
+      "macro": "half",
+      "name": "70.3 specific",
+      "start": "2027-09-20",
+      "pattern": ["b", "p"],
+      "week": "half-specific",
+      "emphasis": "specific",
       "focus": "Long race-pace rides, bricks, race-day fuelling",
       "why": "Rehearse the race.",
-      "success": "75′ @ 70.3 power + brick at race pace" },
-
-    { "id": "htaper", "macro": "half", "name": "Taper & race", "start": "2027-10-04",
-      "pattern": ["tp", "race"], "week": "half-specific", "emphasis": "taper",
+      "success": "75′ @ 70.3 power + brick at race pace"
+    },
+    {
+      "id": "htaper",
+      "macro": "half",
+      "name": "Taper & race",
+      "start": "2027-10-04",
+      "pattern": ["tp", "race"],
+      "week": "half-specific",
+      "emphasis": "taper",
       "focus": "Two-week taper",
       "why": "Two weeks is enough for a half after a short specific phase.",
-      "success": "Race day" },
-
-    { "id": "off", "macro": "offseason", "name": "Off-season", "start": "2027-10-18",
-      "pattern": ["x", "x", "x", "x"], "week": "reset", "emphasis": "recovery",
+      "success": "Race day"
+    },
+    {
+      "id": "off",
+      "macro": "offseason",
+      "name": "Off-season",
+      "start": "2027-10-18",
+      "pattern": ["x", "x", "x", "x"],
+      "week": "reset",
+      "emphasis": "recovery",
       "focus": "Rest, play, decide what 2028 is about",
       "why": "",
-      "success": "" }
+      "success": ""
+    }
   ],
-
   "weeks": {
     "_comment": "Per-week overrides keyed by Monday date. 'days' replaces whole days of the template; 'note' shows on the week.",
     "2026-10-26": {
-      "note": "Test week. The tests matter more than the volume: do them fresh and evenly paced. If you can book a lab lactate step test (bike or run) this week or next, it replaces the 20′ TT and gives LT1 too.",
+      "note": "9–15 days after Florianópolis. Easy volume plus the tests: do them fresh and evenly paced. If you can book a lab lactate step test (bike or run) this week or next, it replaces the 20′ TT and gives LT1 too.",
       "days": {
-        "mon": [{ "id": "run-easy", "min": 60 }],
-        "tue": [{ "id": "bike-easy", "min": 45 }, "swim-aerobic"],
-        "wed": ["bike-test-5"],
-        "thu": [{ "id": "run-easy", "min": 45 }, "strength"],
-        "fri": ["swim-test-400"],
-        "sat": ["run-test-mile"],
-        "sun": [{ "id": "bike-long", "min": 150 }]
+        "mon": [
+          { "id": "run-easy", "min": 60 }
+        ],
+        "tue": [
+          { "id": "bike-easy", "min": 60 },
+          { "id": "swim-aerobic", "min": 45 }
+        ],
+        "wed": [
+          "bike-test-5",
+          { "id": "run-easy", "min": 40 }
+        ],
+        "thu": [
+          { "id": "run-easy", "min": 50 },
+          "strength",
+          "swim-easy"
+        ],
+        "fri": [
+          "swim-test-400",
+          { "id": "bike-easy", "min": 60 }
+        ],
+        "sat": [
+          "run-test-mile",
+          { "id": "bike-easy", "min": 75 }
+        ],
+        "sun": [
+          { "id": "bike-long", "min": 180 },
+          { "id": "run-off-bike", "min": 20 }
+        ]
       }
     },
     "2026-11-02": {
-      "note": "Reload the bike. The 20′ TT on Tuesday gives LT2; after it, enter all test results into config/athlete.json (or just tell Claude the numbers).",
+      "note": "First VO2 week. Tuesday's 20′ TT gives LT2 and replaces the 30/15s this week. After it, enter all test results in config/athlete.json (or just tell Claude the numbers).",
       "days": {
-        "tue": ["bike-test-20", { "id": "run-easy", "min": 35 }]
+        "tue": [
+          "bike-test-20",
+          { "id": "run-easy", "min": 35 }
+        ]
       }
-    },
-    "2026-12-28": {
-      "note": "Holiday recovery week. Move days around freely."
     },
     "2027-01-11": {
       "note": "TTT on Saturday. Keep Tuesday short; no long run on Sunday.",
       "days": {
         "fri": ["rest"],
         "sat": ["run-race-ttt"],
-        "sun": [{ "id": "bike-easy", "min": 90 }]
+        "sun": [
+          { "id": "bike-easy", "min": 90 }
+        ]
       }
     },
     "2027-02-15": {
-      "note": "Retest week: same protocols as October, same order.",
+      "note": "Retest week: same protocols as October, same order. Easy volume around them.",
       "days": {
-        "mon": [{ "id": "run-easy", "min": 45 }, "swim-aerobic"],
-        "tue": ["bike-test-5"],
-        "wed": [{ "id": "run-easy", "min": 45 }, "strength"],
-        "thu": ["swim-test-400", { "id": "bike-easy", "min": 60 }],
-        "fri": ["bike-test-20"],
-        "sat": ["run-test-mile"],
-        "sun": [{ "id": "run-long", "min": 90 }]
+        "mon": [
+          { "id": "run-easy", "min": 50 },
+          { "id": "swim-aerobic", "min": 50 }
+        ],
+        "tue": [
+          "bike-test-5",
+          { "id": "run-easy", "min": 40 }
+        ],
+        "wed": [
+          { "id": "run-easy", "min": 50 },
+          "strength",
+          "swim-easy"
+        ],
+        "thu": [
+          "swim-test-400",
+          { "id": "bike-easy", "min": 75 }
+        ],
+        "fri": [
+          "bike-test-20",
+          { "id": "run-easy", "min": 35 }
+        ],
+        "sat": [
+          "run-test-mile",
+          { "id": "bike-easy", "min": 90 }
+        ],
+        "sun": [
+          { "id": "run-long", "min": 100 },
+          "swim-easy"
+        ]
       }
     },
     "2027-05-31": {
       "note": "Race week.",
       "days": {
-        "sat": [{ "id": "run-easy", "min": 20 }],
+        "sat": [
+          { "id": "run-easy", "min": 20 }
+        ],
         "sun": ["race-marathon"]
       }
     },
     "2027-10-11": {
       "note": "Race week.",
       "days": {
-        "sat": [{ "id": "bike-easy", "min": 30 }, { "id": "run-easy", "min": 15 }],
+        "sat": [
+          { "id": "bike-easy", "min": 30 },
+          { "id": "run-easy", "min": 15 }
+        ],
         "sun": ["race-half"]
       }
+    },
+    "2026-12-21": {
+      "note": "Christmas recovery week. Move days around freely."
     }
   }
 }

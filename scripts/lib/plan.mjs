@@ -10,7 +10,7 @@ export const mondayOf = (s) => { const t = toDay(s); return fromDay(t - ((new Da
 export const isMonday = (s) => new Date(toDay(s)).getUTCDay() === 1;
 
 // Load factor per week kind. i = index of this build/peak week inside its block (0, 1, 2…).
-const FACTOR = { b: (i) => 1 + 0.07 * i, p: (i) => 1 + 0.07 * i, r: () => 0.6, t: () => 0.8, x: () => 0.5, race: () => 0.4 };
+const FACTOR = { b: (i) => 1 + 0.07 * Math.min(i, 3), p: (i) => 1 + 0.07 * Math.min(i, 3), r: () => 0.6, t: () => 0.8, x: () => 0.5, race: () => 0.4 };
 const TAPER = [0.8, 0.65, 0.5];
 export const KIND_LABEL = { b: 'build', p: 'peak', r: 'recover', t: 'test', tp: 'taper', race: 'race', x: 'reset' };
 
@@ -76,9 +76,10 @@ export function expandPlan(plan, lib, today) {
   for (const W of weeks) {
     const by = { swim: 0, bike: 0, run: 0, other: 0 };
     const q = {};
-    let keys = 0;
+    let keys = 0, n = 0;
     for (const d of W.days) for (const s of d.sessions) {
       if (s.sport === 'rest') continue;
+      n++;
       if (s.sport === 'tri') { by.swim += 35; by.bike += s.min * 0.53; by.run += s.min * 0.35; }
       else by[s.sport] = (by[s.sport] || 0) + s.min;
       if (s.q && !s.race) q[s.zone] = (q[s.zone] || 0) + s.q;
@@ -86,7 +87,7 @@ export function expandPlan(plan, lib, today) {
     }
     const total = Object.values(by).reduce((a, b) => a + b, 0);
     const hard = Object.values(q).reduce((a, b) => a + b, 0);
-    W.planned = { h: total / 60, by: Object.fromEntries(Object.entries(by).map(([k, v]) => [k, v / 60])), q, keys, easyShare: total ? 1 - hard / total : 1 };
+    W.planned = { n, h: total / 60, by: Object.fromEntries(Object.entries(by).map(([k, v]) => [k, v / 60])), q, keys, easyShare: total ? 1 - hard / total : 1 };
   }
 
   for (const m of macros) {
@@ -145,6 +146,7 @@ export function checkPlan(P, plan, lib, athlete) {
 
   // A races need a taper/race week
   for (const e of P.events) {
+    if (e.past) continue;
     const W = P.weeks.find((x) => e.date >= x.w && e.date <= x.end);
     if (!W) { warnings.push(`event ${e.id} (${e.date}) is outside the plan`); continue; }
     if (e.priority === 'A' && W.kind !== 'race') warnings.push(`A race ${e.id} is in a "${W.kind}" week, expected "race"`);

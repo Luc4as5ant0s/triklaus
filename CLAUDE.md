@@ -6,7 +6,8 @@ When Lucas talks about training (how he feels, a niggle, a new race, less time, 
 
 ## Who
 
-- Lucas, Porto Alegre, age-group triathlete. Garmin data since 2021; trains ~10–15 h/wk (Aug–Sep 2026: ~13–17 h; run 50–65 km/wk, bike 7–11 h, swim ~7 km).
+- Lucas, Porto Alegre, age-group triathlete. Results: marathon 3:32 (Jun 2025), 70.3 Florianópolis **4:27:35** (18 Oct 2026).
+- Demonstrated load (run `node scripts/history.mjs` on synced data for current numbers): Jul–Sep 2026 **15.6 h/wk over 12 weeks**, best 4 weeks 16.5 h/wk, peak 18.3 h; ~15 sessions/wk with doubles (4–5 swim, 5–6 bike, 5–6 run). He wants to do **as much as he can absorb without overcooking**. Don't plan below his normal; push volume, cap intensity.
 - Events live in `plan/plan.json` → `events`. A races: marathon (May/Jun 2027, date TBD), 70.3 (Oct 2027, TBD). TTT relay (16 Jan 2027) is a **side quest**: no taper, never the focus.
 - He doesn't want to think in one giant race block. He wants a continuous arc: "what's worth working on in this period", at short, mid and long scale.
 
@@ -19,7 +20,8 @@ When Lucas talks about training (how he feels, a niggle, a new race, less time, 
 5. **VLamax**: lowered by threshold / torque work and by not doing glycolytic work (no sprints, no all-out short reps). Strides with full recovery are fine. Raise it only with short, fully recovered max sprints, and only if a profile shows it's too low for the event.
 6. **Threshold** comes later and in small doses: "within 10% under threshold is fine; 5% over is a different session". Favourite structures: 5 × 1 mile @ LT2 (60″), 4 × 8′ tempo→threshold, 5 × 5′ @ LT2 inside a long run, low-cadence torque on the bike.
 7. **Distribution**: polarised / pyramidal base. Ceiling blocks ≥ ~85–90% under LT1; specific blocks ≥ ~70% under LT1, ≤ ~10–12% at or above LT2.
-8. **Block periodisation** (Rønnestad): concentrate a stimulus for 3–7 weeks, load 2–3 weeks then recover 1. Retest at the end of big blocks and re-read the profile.
+8. **Calibrate to history, then progress.** Build weeks start around his recent sustained load and go beyond his best only in ≤ ~7–10% steps, with a recovery week (~60%) every 3–4 weeks. When in doubt, add easy volume or frequency, not intensity.
+9. **Block periodisation** (Rønnestad): concentrate a stimulus for 3–7 weeks, load 2–3 weeks then recover 1. Retest at the end of big blocks and re-read the profile.
 
 Deckard's guidance, not science fact, where it's opinion: say so when you rely on it. Use RPE uphill and in the heat (HR runs ~10 bpm higher in heat).
 

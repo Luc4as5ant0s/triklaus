@@ -245,6 +245,12 @@
     for (const ev of D.events) {
       const x = xOfDate(ev.date); if (x == null) continue;
       const a = ev.priority === 'A';
+      if (ev.past) { // a result: filled dot + time
+        s += `<line x1="${x}" x2="${x}" y1="${Y.ev + 16}" y2="${Y.base}" stroke="var(--text-muted)" stroke-width="1" stroke-dasharray="2 3"/>
+          <circle cx="${x}" cy="${Y.ev + 9}" r="5.5" fill="var(--text-primary)"/>
+          <text class="t-ev" x="${x + 9}" y="${Y.ev + 14}">${esc(ev.short)}</text>`;
+        continue;
+      }
       s += `<line x1="${x}" x2="${x}" y1="${Y.ev + 16}" y2="${Y.base}" stroke="var(--text-primary)" stroke-width="1" stroke-dasharray="${a ? '0' : '3 3'}" opacity="${a ? .8 : .45}"/>
         <path d="M${x},${Y.ev + 3} l6,6 l-6,6 l-6,-6Z" fill="${a ? 'var(--text-primary)' : 'var(--surface-1)'}" stroke="var(--text-primary)" stroke-width="1.5"/>
         <text class="t-ev" x="${x + 10}" y="${Y.ev + 14}">${esc(ev.short)}${ev.tentative ? '?' : ''}</text>`;
@@ -266,7 +272,7 @@
     L.innerHTML = Object.entries(EMPH_NAME).filter(([k]) => used.has(k)).map(([k, v]) => `<span><i class="sw" style="background:${cvar(k)}"></i>${v}</span>`).join('') +
       (dayMode ? `<span><i class="sw" style="background:var(--text-primary);opacity:.75"></i>done (min/day)</span><span class="muted">tinted = planned, by session zone</span>`
         : `<span><i class="sw" style="background:var(--text-secondary)"></i>solid = done</span><span><i class="sw" style="background:var(--text-secondary);opacity:.3"></i>light = planned</span><span><i class="sw" style="background:var(--text-primary);height:3px;opacity:.55"></i>plan, for past weeks</span>`) +
-      `<span>◆ A race · ◇ C race · ? tentative</span>`;
+      `<span>● past race (result) · ◆ A race · ◇ C race · ? tentative</span>`;
 
     // interaction
     sc.querySelectorAll('.wk').forEach((g) => {
@@ -284,8 +290,8 @@
   function weekTip(Wk) {
     const ms = Wk.meso ? mesoById[Wk.meso] : null;
     let t = `<b>${fmt(Wk.w)} – ${fmt(addDays(Wk.w, 6))}</b><div class="muted">${ms ? `${esc(ms.name)} · wk ${Wk.idx}/${Wk.of} · ${KIND[Wk.kind]}` : 'Before the plan'}</div>`;
-    if (Wk.planned) t += row('Planned', hrs(Wk.planned.h));
-    if (Wk.actual) t += row('Done', hrs(Wk.actual.h));
+    if (Wk.planned) t += row('Planned', `${hrs(Wk.planned.h)} · ${Wk.planned.n} ses`);
+    if (Wk.actual) t += row('Done', `${hrs(Wk.actual.h)} · ${Wk.actual.n} ses`);
     for (const sp of ['swim', 'bike', 'run']) {
       const p = Wk.planned?.by[sp], a = Wk.actual?.by[sp];
       if (p || a) t += row(SPORT[sp].toLowerCase(), `${p != null ? hrs(p) : ''}${p != null && a != null ? ' → ' : ''}${a != null ? hrs(a) : ''}`);
@@ -337,8 +343,8 @@
     }
     const P = Wk.planned, A = Wk.actual;
     const sum = [];
-    if (P) sum.push(`Planned <b>${hrs(P.h)}</b>`);
-    if (A) sum.push(`Done <b>${hrs(A.h)}</b>`);
+    if (P) sum.push(`Planned <b>${hrs(P.h)}</b> · <b>${P.n}</b> sessions`);
+    if (A) sum.push(`Done <b>${hrs(A.h)}</b> · <b>${A.n}</b> sessions`);
     for (const sp of ['swim', 'bike', 'run']) {
       const p = P?.by[sp], a = A?.by[sp];
       if (p || a) sum.push(`${SPORT[sp].toLowerCase()} <b>${p ? hrs(p) : ''}${p && a != null ? ' → ' : ''}${a != null ? hrs(a) : ''}</b>`);
