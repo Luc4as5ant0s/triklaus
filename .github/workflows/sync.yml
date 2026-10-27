@@ -1,0 +1,52 @@
+name: sync-and-deploy
+on:
+  schedule:
+    - cron: '17 9 * * *'   # 06:17 BRT
+    - cron: '17 21 * * *'  # 18:17 BRT
+  push:
+    branches: [main]
+    paths: ['config/**', 'scripts/**']
+  workflow_dispatch:
+    inputs:
+      full:
+        description: 'Full history backfill'
+        type: boolean
+        default: false
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency: { group: sync, cancel-in-progress: false }
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    environment: { name: github-pages }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      # Raw Garmin data (GPS, HR…) never goes into the public repo: it lives in the Actions cache.
+      - name: Restore raw data
+        uses: actions/cache/restore@v4
+        with:
+          path: data/raw
+          key: garmin-raw-${{ github.run_id }}
+          restore-keys: garmin-raw-
+      - name: Garmin sync
+        env:
+          GARMIN_API_KEY: ${{ secrets.GARMIN_API_KEY }}
+        run: |
+          FULL=""
+          if [ "${{ inputs.full }}" = "true" ] || [ ! -f data/raw/garmin/activities.json ]; then FULL="--full"; fi
+          node scripts/sync-garmin.mjs $FULL
+      - name: Save raw data
+        uses: actions/cache/save@v4
+        with:
+          path: data/raw
+          key: garmin-raw-${{ github.run_id }}
+      - name: Build site
+        run: node scripts/build.mjs
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with: { path: dist }
+      - uses: actions/deploy-pages@v4
