@@ -1,0 +1,18 @@
+{
+  "_comment": "Thresholds. null = estimated automatically from your data (shown as 'est.' on the site).",
+  "name": "Lucas",
+  "city": "Porto Alegre",
+  "goal": {
+    "name": "Travessia Torres Tramandaí",
+    "short": "TTT",
+    "date": "2027-01-16",
+    "detail_pt": "Revezamento em octeto · 84,39 km de praia · meu trecho ≈ 15 km",
+    "detail_en": "Octet relay · 84.39 km of beach · my leg ≈ 15 km"
+  },
+  "seasonStart": "2026-09-01",
+  "ftp": null,
+  "lthr": null,
+  "cssPer100m": null,
+  "easyHrCeiling": null,
+  "stravaUrl": null
+}
