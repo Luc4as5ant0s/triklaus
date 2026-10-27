@@ -27,7 +27,7 @@ for (const m of P.macros) {
     console.log(`  ├ ${ms.name.padEnd(32)} ${ms.start} ${String(ms.weeks).padStart(2)}w [${ms.pattern.join(' ')}] ${Math.min(...hrs).toFixed(0)}–${Math.max(...hrs).toFixed(0)} h  ${ms.week}`);
     if (args.includes('--weeks')) for (const W of ws) {
       const keys = W.days.flatMap((d) => d.sessions).filter((s) => s.key).map((s) => s.name).join(', ');
-      console.log(`  │   ${W.w} ${KIND_LABEL[W.kind].padEnd(7)} ${h(W.planned.h)} h  easy ${Math.round(W.planned.easyShare * 100)}%  ${keys}`);
+      console.log(`  │   ${W.w} ${KIND_LABEL[W.kind].padEnd(7)} ${h(W.planned.h)} h ${String(W.planned.n).padStart(2)} ses  easy ${Math.round(W.planned.easyShare * 100)}%  ${keys}`);
     }
   }
 }

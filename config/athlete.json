@@ -2,10 +2,10 @@
   "_comment": "Who the plan is for. profile values: null = estimated from Garmin data (shown as 'est.' on the site). Replace with test/lab results as they come in and set 'tested' to the date.",
   "name": "Lucas",
   "city": "Porto Alegre",
-  "historyStart": "2026-05-04",
+  "historyStart": "2025-06-02",
   "availability": {
-    "weeklyHours": [10, 15],
-    "note": "Aug–Sep 2026 averaged ~13–17 h/wk (run 50–65 km, bike 7–11 h, swim ~7 km). Indoor trainer on weekdays, long sessions on weekends."
+    "weeklyHours": [13, 20],
+    "note": "Demonstrated load: Jul–Sep 2026 15.6 h/wk over 12 weeks, best 4 weeks 16.5 h/wk, peak 18.3 h; ~15 sessions/wk (4–5 swim, 5–6 bike, 5–6 run) with doubles. Wants to do as much as he can absorb without overcooking."
   },
   "profile": {
     "bike": { "lt1W": null, "lt2W": null, "p5W": null, "tested": null, "source": null },
