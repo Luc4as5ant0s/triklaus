@@ -5,7 +5,7 @@ on:
     - cron: '17 21 * * *'  # 18:17 BRT
   push:
     branches: [main]
-    paths: ['config/**', 'scripts/**']
+    paths: ['config/**', 'plan/**', 'scripts/**', 'site/**']
   workflow_dispatch:
     inputs:
       full:
@@ -16,15 +16,18 @@ permissions:
   contents: read
   pages: write
   id-token: write
-concurrency: { group: sync, cancel-in-progress: false }
+concurrency:
+  group: sync-${{ github.ref }}
+  cancel-in-progress: false
 jobs:
-  sync:
+  build:
     runs-on: ubuntu-latest
-    environment: { name: github-pages }
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with: { node-version: 22 }
+      - name: Check plan
+        run: node scripts/check.mjs
       # Raw Garmin data (GPS, HR…) never goes into the public repo: it lives in the Actions cache.
       - name: Restore raw data
         uses: actions/cache/restore@v4
@@ -46,7 +49,23 @@ jobs:
           key: garmin-raw-${{ github.run_id }}
       - name: Build site
         run: node scripts/build.mjs
+      # Branch runs (workflow_dispatch on a branch) stop here: the built page is downloadable as a preview.
+      - name: Upload preview
+        if: github.ref != 'refs/heads/main'
+        uses: actions/upload-artifact@v4
+        with: { name: site-preview, path: dist, retention-days: 3 }
       - uses: actions/configure-pages@v5
+        if: github.ref == 'refs/heads/main'
       - uses: actions/upload-pages-artifact@v3
+        if: github.ref == 'refs/heads/main'
         with: { path: dist }
-      - uses: actions/deploy-pages@v4
+  deploy:
+    needs: build
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - id: deploy
+        uses: actions/deploy-pages@v4

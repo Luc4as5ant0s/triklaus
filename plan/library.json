@@ -1,0 +1,351 @@
+{
+  "_comment": "Session library + week templates. A session's 'zone' names a row of the zones table (E, LT1, MP, RP, ST, T, VO2, VO2s, S). Key sessions progress through 'steps' (one per build week of the block); 'recover' is the recovery-week variant (null = drop it that week). 'q' = minutes of quality work at the zone; the rest of the session counts as easy.",
+  "sessions": {
+    "swim-aerobic": {
+      "sport": "swim", "name": "Aerobic swim", "min": 45, "zone": "E",
+      "set": "300 easy · 4×50 drill · 8×100 @ CSS +6–8″ (15″ rest) · 200 pull easy",
+      "why": "Aerobic volume with technique. Short rests keep it continuous without going hard."
+    },
+    "swim-endurance": {
+      "sport": "swim", "name": "Endurance swim", "min": 55, "zone": "E",
+      "set": "400 easy · 3×500 @ CSS +8″ (30″) · 200 easy",
+      "why": "Longer reps at the same easy pace. Per Deckard, 5×500 at Z2 is a touch slower than 20×100 at Z2, and that's correct."
+    },
+    "swim-vo2": {
+      "sport": "swim", "name": "Swim VO2", "min": 50, "zone": "VO2", "key": true,
+      "steps": [
+        { "set": "400 easy · 12×50 @ 400 TT pace (20″) · 300 easy", "q": 8 },
+        { "set": "400 easy · 8×100 @ 400 TT pace (20″) · 300 easy", "q": 11 },
+        { "set": "400 easy · 10×100 @ 400 TT pace (20″) · 300 easy", "q": 14 }
+      ],
+      "recover": { "set": "400 easy · 8×50 @ 400 TT pace (20″) · 200 easy", "q": 5 },
+      "why": "The swim's ceiling session: reps at 400 m race pace."
+    },
+    "swim-css": {
+      "sport": "swim", "name": "CSS swim", "min": 55, "zone": "T", "key": true,
+      "steps": [
+        { "set": "400 easy · 3×400 @ CSS (30″) · 200 easy", "q": 19 },
+        { "set": "400 easy · 2×800 @ CSS (40″) · 200 easy", "q": 25 },
+        { "set": "300 easy · 1900 continuous @ CSS +2″ · 200 easy", "q": 31 }
+      ],
+      "recover": null,
+      "why": "Half-distance race specificity: long, steady, at threshold pace."
+    },
+    "swim-ow": {
+      "sport": "swim", "name": "Open water", "min": 50, "zone": "E",
+      "set": "Continuous 1.5–2 km in open water, sighting every 6–8 strokes, 4×1′ race effort",
+      "why": "Sighting, wetsuit, and pacing without walls."
+    },
+    "swim-test-400": {
+      "sport": "swim", "name": "Swim test: 400 + 200 TT", "min": 45, "zone": "VO2", "key": true, "test": true,
+      "set": "400 easy · 4×50 build · 400 TT all-out · 300 easy · 200 TT all-out · 200 easy",
+      "q": 10,
+      "why": "Deckard profiles the swim with a ~500 yd time trial. 400 + 200 also gives CSS = 200 / (T400 − T200) per metre."
+    },
+
+    "bike-easy": {
+      "sport": "bike", "name": "Easy spin", "min": 60, "zone": "E",
+      "set": "Easy, high cadence, well below LT1",
+      "why": "Volume that costs nothing to recover from."
+    },
+    "bike-lt1": {
+      "sport": "bike", "name": "LT1 ride", "min": 90, "zone": "LT1",
+      "set": "15′ easy · steady just under LT1 · 10′ easy. Keep HR flat; if it drifts more than 5%, back off.",
+      "why": "Per Deckard, long easy work under LT1 is the primary VO2max driver: stroke volume, mitochondria, fat oxidation. The top of easy, never above it."
+    },
+    "bike-long": {
+      "sport": "bike", "name": "Long ride", "min": 180, "zone": "E",
+      "set": "Below LT1 the whole way · fuel 60–90 g carbs/h from the start",
+      "why": "Big aerobic stimulus, durability, gut training."
+    },
+    "bike-vo2-3015": {
+      "sport": "bike", "name": "VO2 30/15s", "min": 75, "zone": "VO2s", "key": true,
+      "steps": [
+        { "set": "15′ warm-up · 3 × (10 × 30″ on / 15″ off) · 3′ easy between sets · cool-down", "q": 15 },
+        { "set": "15′ warm-up · 3 × (11 × 30″ on / 15″ off) · 3′ between · cool-down", "q": 17 },
+        { "set": "15′ warm-up · 3 × (13 × 30″ on / 15″ off) · 3′ between · cool-down", "q": 20 },
+        { "set": "15′ warm-up · 4 × (10 × 30″ on / 15″ off) · 3′ between · cool-down", "q": 20 }
+      ],
+      "recover": { "set": "15′ warm-up · 2 × (8 × 30″ on / 15″ off) · cool-down", "q": 8 },
+      "how": "The 15″ off is pedalled at ~50% of 5′ power. Never coast: coasting turns it glycolytic (Deckard). If you're fading, drop the 30″ target by 10–20 W and keep the 15″ strict.",
+      "why": "Rønnestad's 30/15 protocol keeps you near VO2max for longer than steady 4′ reps. It's the main ceiling session."
+    },
+    "bike-vo2-4min": {
+      "sport": "bike", "name": "VO2 4′ reps", "min": 75, "zone": "VO2", "key": true,
+      "steps": [
+        { "set": "15′ warm-up · 4 × 4′ @ VO2 (2′ pedalled at 50%) · cool-down", "q": 16 },
+        { "set": "15′ warm-up · 5 × 4′ @ VO2 (2′ pedalled) · cool-down", "q": 20 },
+        { "set": "15′ warm-up · 6 × 4′ @ VO2 (2′ pedalled) · cool-down", "q": 24 },
+        { "set": "15′ warm-up · 4 × 5′ @ VO2 (2′30″ pedalled) · cool-down", "q": 20 }
+      ],
+      "recover": { "set": "15′ warm-up · 3 × 3′ @ VO2 · cool-down", "q": 9 },
+      "how": "Deckard anchors these at ~92% of 4′ power, which is why they feel hard. First rep should feel controlled.",
+      "why": "The second ceiling session in a VO2 block. Long reps load stroke volume."
+    },
+    "bike-torque": {
+      "sport": "bike", "name": "Torque / low cadence", "min": 90, "zone": "ST", "key": true,
+      "steps": [
+        { "set": "20′ warm-up · 4 × 8′ @ 85–90% LT2, 55–65 rpm (3′ easy) · cool-down", "q": 32 },
+        { "set": "20′ warm-up · 4 × 10′ @ 85–90% LT2, 55–65 rpm (3′) · cool-down", "q": 40 },
+        { "set": "20′ warm-up · 3 × 15′ @ 88–92% LT2, 60–70 rpm (4′) · cool-down", "q": 45 }
+      ],
+      "recover": { "set": "20′ warm-up · 3 × 6′ @ 85% LT2, 60 rpm · cool-down", "q": 18 },
+      "how": "Deckard uses torque work to train threshold without sitting right on threshold. Seated, quiet upper body.",
+      "why": "Raises LT2 and nudges VLamax down while VO2max carries over."
+    },
+    "bike-threshold": {
+      "sport": "bike", "name": "Threshold", "min": 90, "zone": "T", "key": true,
+      "steps": [
+        { "set": "20′ warm-up · 3 × 12′ @ 92–97% LT2 (4′) · cool-down", "q": 36 },
+        { "set": "20′ warm-up · 3 × 15′ @ 92–97% LT2 (4′) · cool-down", "q": 45 },
+        { "set": "20′ warm-up · 2 × 25′ @ 90–95% LT2 (5′) · cool-down", "q": 50 }
+      ],
+      "recover": null,
+      "how": "Per Deckard, within 10% under threshold is fine; 5% over is a different session that costs days.",
+      "why": "Extends time at LT2: the utilization side of the profile."
+    },
+    "bike-race-pace": {
+      "sport": "bike", "name": "70.3 race-pace ride", "min": 150, "zone": "RP", "key": true,
+      "steps": [
+        { "set": "30′ easy · 2 × 30′ @ 70.3 power (10′ easy) · easy to finish", "q": 60 },
+        { "set": "30′ easy · 2 × 40′ @ 70.3 power (10′) · easy to finish", "q": 80 },
+        { "set": "20′ easy · 75′ @ 70.3 power · easy to finish", "q": 75 }
+      ],
+      "recover": null,
+      "how": "Race nutrition exactly as planned for race day. Aero position for every race-pace minute.",
+      "why": "Specificity: pacing, position, fuelling."
+    },
+    "bike-test-5": {
+      "sport": "bike", "name": "Bike test: 5′ all-out", "min": 60, "zone": "VO2", "key": true, "test": true,
+      "set": "20′ progressive warm-up incl. 3 × 1′ hard · 10′ easy · 5′ ALL-OUT, evenly paced · 20′ easy",
+      "q": 5,
+      "why": "Deckard's anchor: 5′ power ≈ power at VO2max. LT1 and LT2 are read as % of it (standard ≈ 50 / 75 / 100%)."
+    },
+    "bike-test-20": {
+      "sport": "bike", "name": "Bike test: 20′ TT", "min": 75, "zone": "T", "key": true, "test": true,
+      "set": "20′ warm-up incl. 2 × 3′ firm · 5′ easy · 20′ TT, start conservative · 20′ easy",
+      "q": 20,
+      "why": "LT2 ≈ 90% of 20′ power (Deckard's safe estimate). A lab lactate step test is better if you can book one; it also gives LT1."
+    },
+
+    "run-easy": {
+      "sport": "run", "name": "Easy run", "min": 45, "zone": "E",
+      "set": "Conversational, HR under LT1",
+      "why": "Aerobic volume on legs."
+    },
+    "run-easy-strides": {
+      "sport": "run", "name": "Easy run + strides", "min": 50, "zone": "E",
+      "set": "Easy, HR under LT1 · finish with 6 × 20″ strides, fully recovered (walk back)",
+      "q": 2,
+      "why": "Keeps mechanics and economy sharp. Short with full recovery, so it isn't a glycolytic stimulus that raises VLamax."
+    },
+    "run-off-bike": {
+      "sport": "run", "name": "Run off the bike", "min": 20, "zone": "E",
+      "set": "Straight off the bike, easy, smooth cadence",
+      "why": "Brick adaptation at near-zero cost."
+    },
+    "run-long": {
+      "sport": "run", "name": "Long run", "min": 95, "zone": "E",
+      "set": "Under LT1 HR the whole way, flat-ish route · gels from 60′",
+      "why": "The run's ceiling builder: capillaries, mitochondria, durability."
+    },
+    "run-hills-vo2": {
+      "sport": "run", "name": "Hill VO2", "min": 60, "zone": "VO2", "key": true,
+      "steps": [
+        { "set": "20′ easy · 5 × 3′ uphill @ RPE 8–9, jog down · 15′ easy", "q": 15 },
+        { "set": "20′ easy · 6 × 3′ uphill @ RPE 8–9, jog down · 15′ easy", "q": 18 },
+        { "set": "20′ easy · 5 × 4′ uphill @ RPE 8–9, jog down · 15′ easy", "q": 20 }
+      ],
+      "recover": { "set": "20′ easy · 4 × 2′ uphill @ RPE 8 · 15′ easy", "q": 8 },
+      "how": "Run these on RPE. Deckard uses RPE for uphill VO2; HR lags and the heat adds about 10 bpm.",
+      "why": "VO2max stimulus with low impact and low injury risk."
+    },
+    "run-vo2-k": {
+      "sport": "run", "name": "1 km VO2 reps", "min": 60, "zone": "VO2", "key": true,
+      "steps": [
+        { "set": "20′ easy · 5 × 1000 m @ VO2 pace (2′ jog) · 10′ easy", "q": 17 },
+        { "set": "20′ easy · 6 × 1000 m @ VO2 pace (2′ jog) · 10′ easy", "q": 20 }
+      ],
+      "recover": { "set": "20′ easy · 4 × 600 m @ VO2 pace · 10′ easy", "q": 8 },
+      "why": "Keeps the ceiling while the block focuses on threshold and specificity."
+    },
+    "run-threshold-mile": {
+      "sport": "run", "name": "Threshold miles", "min": 70, "zone": "T", "key": true,
+      "steps": [
+        { "set": "20′ easy · 4 × 1 mile @ LT2 (60″ rest) · 10′ easy", "q": 24 },
+        { "set": "20′ easy · 5 × 1 mile @ LT2 (60″ rest) · 10′ easy", "q": 30 },
+        { "set": "20′ easy · 6 × 1 mile @ LT2 (60″ rest) · 10′ easy", "q": 36 }
+      ],
+      "recover": { "set": "20′ easy · 3 × 1 mile @ LT2 (60″) · 10′ easy", "q": 18 },
+      "how": "Deckard's track session. Finish at RPE 7–8; the last rep shouldn't be your fastest by much.",
+      "why": "Raises LT2 toward the ceiling. Threshold work also lowers VLamax."
+    },
+    "run-tempo-8": {
+      "sport": "run", "name": "Tempo → threshold 8′s", "min": 70, "zone": "ST", "key": true,
+      "steps": [
+        { "set": "20′ easy · 4 × 8′ starting at MP, finishing at LT2 (2′ jog) · 10′ easy", "q": 32 },
+        { "set": "20′ easy · 4 × 10′ MP → LT2 (2′ jog) · 10′ easy", "q": 40 },
+        { "set": "20′ easy · 3 × 15′ MP → LT2 (3′ jog) · 10′ easy", "q": 45 }
+      ],
+      "recover": { "set": "20′ easy · 3 × 8′ @ MP (2′) · 10′ easy", "q": 24 },
+      "why": "Deckard's long-course threshold session. The MP→LT2 drift trains the range you race marathons in."
+    },
+    "run-long-lt2": {
+      "sport": "run", "name": "Long run with LT2 reps", "min": 110, "zone": "T", "key": true,
+      "steps": [
+        { "set": "Easy 50′ · 4 × 5′ @ LT2 (2′ jog) · easy to finish", "q": 20 },
+        { "set": "Easy 50′ · 5 × 5′ @ LT2 (2′ jog) · easy to finish", "q": 25 },
+        { "set": "Easy 50′ · 6 × 5′ @ LT2 (2′ jog) · easy to finish", "q": 30 }
+      ],
+      "recover": { "set": "Easy 80′, last 10′ steady", "q": 0 },
+      "why": "Threshold on tired legs: Deckard's 5 × 5′ inside a long run. Builds durability at LT2."
+    },
+    "run-long-mp": {
+      "sport": "run", "name": "Long run with MP", "min": 130, "zone": "MP", "key": true,
+      "steps": [
+        { "set": "Easy 40′ · 2 × 5 km @ MP (1 km easy) · easy to finish", "q": 40 },
+        { "set": "Easy 35′ · 3 × 5 km @ MP (1 km easy) · easy to finish", "q": 60 },
+        { "set": "Easy 30′ · 2 × 8 km @ MP (1 km easy) · easy to finish", "q": 65 },
+        { "set": "Easy 25′ · 18 km @ MP · easy to finish", "q": 75 }
+      ],
+      "recover": { "set": "Easy 90′ with 3 × 2 km @ MP", "q": 20 },
+      "how": "Race-day fuelling: 60–90 g carbs/h, rehearse gels and drinks.",
+      "why": "Marathon specificity: hold MP while glycogen drops."
+    },
+    "run-brick-rp": {
+      "sport": "run", "name": "Race-pace brick run", "min": 35, "zone": "RP", "key": false,
+      "set": "Off the bike: 10′ easy · 15′ @ 70.3 run pace · 10′ easy",
+      "q": 15,
+      "why": "Finding race pace on legs that have just ridden."
+    },
+    "run-test-mile": {
+      "sport": "run", "name": "Run test: 1 mile TT", "min": 50, "zone": "VO2", "key": true, "test": true,
+      "set": "20′ easy + 4 strides · 1 mile (1609 m) ALL-OUT on track, even pace · 15′ easy",
+      "q": 6,
+      "why": "Deckard's run anchor (≈ vVO2max). LT2 pace is read as % of it. A big gap means more threshold work; a small gap means keep building the ceiling."
+    },
+    "run-race-ttt": {
+      "sport": "run", "name": "TTT relay leg (~15 km beach)", "min": 75, "zone": "T", "key": true, "race": true,
+      "set": "Warm-up 15′ · your leg ~15 km on sand at LT2-ish effort · enjoy it",
+      "q": 60,
+      "why": "Side quest. Treat it as a hard threshold workout with friends, not an A race."
+    },
+
+    "race-marathon": {
+      "sport": "run", "name": "Marathon", "min": 200, "zone": "MP", "key": true, "race": true,
+      "set": "42.2 km. Even MP, fuel 60–90 g/h from km 5.",
+      "q": 190,
+      "why": "The A race."
+    },
+    "race-half": {
+      "sport": "tri", "name": "70.3", "min": 300, "zone": "RP", "key": true, "race": true,
+      "set": "1.9 km swim · 90 km bike @ 70.3 power · 21.1 km run",
+      "q": 280,
+      "why": "The A race."
+    },
+
+    "strength": {
+      "sport": "other", "name": "Strength & mobility", "min": 35, "zone": "E",
+      "set": "Heavy-ish: split squat, single-leg RDL, calf raise, step-up 3 × 6–8 · core 10′",
+      "why": "Running economy and injury resilience. Heavy, low reps, no fatigue chase."
+    },
+    "rest": {
+      "sport": "rest", "name": "Rest", "min": 0, "zone": "E",
+      "set": "Off. Walk, sleep, eat.",
+      "why": "Adaptation happens here."
+    }
+  },
+
+  "weeks": {
+    "base-volume": {
+      "_comment": "Ceiling via volume: everything under LT1 except one bike 30/15 session.",
+      "mon": ["swim-aerobic", "strength"],
+      "tue": ["bike-vo2-3015", { "id": "run-easy", "min": 35 }],
+      "wed": ["run-easy-strides", "swim-endurance"],
+      "thu": ["bike-lt1"],
+      "fri": ["run-easy"],
+      "sat": ["bike-long", "run-off-bike"],
+      "sun": ["run-long"]
+    },
+    "vo2-block": {
+      "_comment": "Ceiling via intensity: two VO2 sessions (bike + run hills), volume held.",
+      "mon": ["swim-aerobic", "strength"],
+      "tue": ["bike-vo2-3015", { "id": "run-easy", "min": 35 }],
+      "wed": ["run-easy-strides", "swim-endurance"],
+      "thu": ["run-hills-vo2"],
+      "fri": [{ "id": "bike-lt1", "min": 75 }],
+      "sat": [{ "id": "bike-long", "min": 165 }, "run-off-bike"],
+      "sun": [{ "id": "run-long", "min": 90 }]
+    },
+    "durability": {
+      "_comment": "The biggest easy volume of the year: long run grows toward 2h30, long ride toward 4h.",
+      "mon": ["swim-aerobic", "strength"],
+      "tue": ["bike-vo2-3015", { "id": "run-easy", "min": 35 }],
+      "wed": ["run-easy-strides", "swim-endurance"],
+      "thu": [{ "id": "bike-lt1", "min": 105 }],
+      "fri": ["run-easy"],
+      "sat": [{ "id": "bike-long", "min": 200 }, "run-off-bike"],
+      "sun": [{ "id": "run-long", "min": 120 }]
+    },
+    "threshold-run": {
+      "_comment": "Run-led threshold: Deckard's miles + LT2 inside the long run. Bike drops to maintenance.",
+      "mon": ["swim-aerobic", "strength"],
+      "tue": ["run-threshold-mile"],
+      "wed": [{ "id": "bike-lt1", "min": 75 }, "swim-endurance"],
+      "thu": ["run-easy-strides"],
+      "fri": ["run-easy"],
+      "sat": [{ "id": "bike-long", "min": 120 }, { "id": "run-easy", "min": 30 }],
+      "sun": ["run-long-lt2"]
+    },
+    "marathon-specific": {
+      "_comment": "Marathon pace on the long run plus one MP→LT2 session. VO2 kept alive with short 1 km reps.",
+      "mon": ["swim-aerobic", "strength"],
+      "tue": ["run-tempo-8"],
+      "wed": [{ "id": "run-easy", "min": 50 }, { "id": "bike-easy", "min": 60 }],
+      "thu": ["run-vo2-k"],
+      "fri": [{ "id": "run-easy", "min": 40 }, "swim-aerobic"],
+      "sat": [{ "id": "bike-lt1", "min": 75 }],
+      "sun": ["run-long-mp"]
+    },
+    "reset": {
+      "_comment": "Unstructured: move every day, nothing hard, no plan to fail.",
+      "mon": ["rest"],
+      "tue": [{ "id": "swim-aerobic", "min": 35 }],
+      "wed": [{ "id": "bike-easy", "min": 60 }],
+      "thu": [{ "id": "run-easy", "min": 35 }],
+      "fri": ["rest"],
+      "sat": [{ "id": "bike-easy", "min": 90 }],
+      "sun": [{ "id": "run-easy", "min": 45 }, { "id": "swim-ow", "min": 30 }]
+    },
+    "bike-vo2-block": {
+      "_comment": "Deckard's 7-week VO2max block on the bike. Swim gets a third session; run is maintained.",
+      "mon": ["swim-aerobic", "strength"],
+      "tue": ["bike-vo2-3015"],
+      "wed": [{ "id": "run-easy-strides", "min": 45 }, "swim-vo2"],
+      "thu": ["bike-vo2-4min"],
+      "fri": [{ "id": "run-easy", "min": 40 }, "swim-endurance"],
+      "sat": [{ "id": "bike-long", "min": 180 }, "run-off-bike"],
+      "sun": [{ "id": "run-long", "min": 85 }]
+    },
+    "half-build": {
+      "_comment": "70.3 strength-endurance: torque work, run threshold, race-pace bricks.",
+      "mon": ["swim-css", "strength"],
+      "tue": ["bike-torque"],
+      "wed": ["run-tempo-8", "swim-aerobic"],
+      "thu": [{ "id": "bike-lt1", "min": 90 }],
+      "fri": [{ "id": "run-easy", "min": 40 }, "swim-ow"],
+      "sat": ["bike-race-pace", "run-brick-rp"],
+      "sun": [{ "id": "run-long", "min": 95 }]
+    },
+    "half-specific": {
+      "_comment": "Race rehearsal: threshold on the bike, long race-pace bricks, open water.",
+      "mon": ["swim-css"],
+      "tue": ["bike-threshold"],
+      "wed": [{ "id": "run-threshold-mile" }, "swim-ow"],
+      "thu": [{ "id": "bike-easy", "min": 75 }],
+      "fri": [{ "id": "run-easy", "min": 40 }, "swim-aerobic"],
+      "sat": ["bike-race-pace", "run-brick-rp"],
+      "sun": [{ "id": "run-long", "min": 90 }]
+    }
+  }
+}
