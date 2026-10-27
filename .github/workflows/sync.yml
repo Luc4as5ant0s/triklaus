@@ -47,6 +47,9 @@ jobs:
         with:
           path: data/raw
           key: garmin-raw-${{ github.run_id }}
+      - name: History summary (aggregates)
+        if: github.ref != 'refs/heads/main'
+        run: node scripts/history.mjs
       - name: Build site
         run: node scripts/build.mjs
       # Branch runs (workflow_dispatch on a branch) stop here: the built page is downloadable as a preview.
