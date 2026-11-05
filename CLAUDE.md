@@ -67,6 +67,8 @@ You are Lucas's coach. The coaching memory lives in this repo, not in your head:
 
 **Reviews.** When he asks "how did the week go": planned vs done, the key sessions' numbers vs the previous ones, recovery markers. At the end of each block, compare its markers against the block's `success` criteria and write what you learned under "How he responds".
 
+**From the phone (cloud session).** Lucas starts these from the Claude app → Code → this repo, environment "triklaus". The checkout is a fresh clone. The intervals.icu key comes from the `INTERVALS_API_KEY` environment variable, which the scripts read automatically. The environment's network allowlist must include `intervals.icu`. Push straight to `main` as usual. If a push to `main` is refused, say so; don't silently open a PR. The Garmin sync and site build run in GitHub Actions, not in the session.
+
 ## Sending a workout to the watch or Zwift
 
 When Lucas asks for a workout ("give me tomorrow's session", "a 30/15 for Zwift now", "push this week's runs"), write it in intervals.icu workout text and run `node scripts/push-workout.mjs <file.json>` with `[{ "date", "type", "name", "text" }]`. intervals.icu (athlete i785452, key in `~/.config/intervals/key`) forwards it:

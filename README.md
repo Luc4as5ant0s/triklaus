@@ -2,7 +2,7 @@
 
 Lucas's training as a continuous arc: **past** (Garmin), **present** (this week, session by session) and **future** (the plan), at three scales. Macro blocks carry a physiological goal, mesos (1–7 weeks) progress inside them, and individual sessions carry their set, target and reason. The method follows Robbie Deckard: profile LT1 / LT2 / 5′, raise the ceiling (VO2max) with easy volume and VO2 work, keep VLamax in balance, and add threshold later and in small doses.
 
-The plan is changed **by talking to Claude** in this repo. See [`CLAUDE.md`](CLAUDE.md) for the method and the editing protocol.
+The plan is changed **by talking to Claude** in this repo: locally with `claude`, or from the phone (Claude app → Code → triklaus, in a cloud environment with `INTERVALS_API_KEY` set and `intervals.icu` allowed on the network). Coaching memory lives in `coach/` (athlete model + journal); `scripts/coach-data.mjs` is the briefing from intervals.icu. See [`CLAUDE.md`](CLAUDE.md) for the method and the editing protocol.
 
 - `plan/plan.json`: events, macro blocks, mesos, per-week overrides
 - `plan/library.json`: session library + week templates
