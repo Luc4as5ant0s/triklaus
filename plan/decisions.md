@@ -39,3 +39,11 @@ Newest at the bottom. Each entry: what Lucas said, what changed, and why (with t
 **Changed:** Thu 5 Nov: hill VO2 run (5 × 3′) → bike VO2 30/30s (new library session `bike-vo2-3030`), plus the easy swim. Sent to Zwift through intervals.icu: ons 345 W, offs 160 W pedalled, 4′ easy between sets (64′). The hill run was removed from the Garmin calendar.
 
 **Why:** both target the ceiling, so the week's VO2 dose is unchanged; doing both on one day would be two key sessions. The ons sit at ~107% of 5′ power (321 W), slightly above the 30/15 range because the 30″ rest is longer. The offs are pedalled at ~50% (Deckard: never coast, or it turns glycolytic).
+
+## 2026-11-05 · Hill VO2 run the day after the 30/30s
+
+**Lucas:** felt really good after the 30/30s and wanted a VO2 run the next day.
+
+**Changed:** Fri 6 Nov: LT1 ride → hill VO2 run (5 × 3′ uphill, RPE 8–9) plus an easy swim. The LT1 ride is dropped this week.
+
+**Why:** inside a VO2 block, stacking VO2 sessions on consecutive days is what Rønnestad-style high-intensity blocks do, and going bike then run spreads the muscular load. Hills keep the VO2 stimulus with low impact. Guardrails: ≥ 7 h sleep, a normal warm-up, and stop at 3 reps if his legs are flat. The weekend stays easy to absorb it.
