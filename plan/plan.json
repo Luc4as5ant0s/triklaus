@@ -381,12 +381,13 @@
       }
     },
     "2026-11-02": {
-      "note": "First VO2 week. Tuesday's 20′ TT gives LT2 and replaces the 30/15s this week. After it, enter all test results in config/athlete.json (or just tell Claude the numbers).",
+      "note": "First VO2 week. Tuesday's 20′ TT gives LT2 and replaces the 30/15s this week. After it, enter all test results in config/athlete.json (or just tell Claude the numbers). Thursday: run hills swapped for 3 × 10 × 30/30 on the trainer (Lucas's call).",
       "days": {
         "tue": [
           "bike-test-20",
           { "id": "run-easy", "min": 35 }
-        ]
+        ],
+        "thu": ["bike-vo2-3030", "swim-easy"]
       }
     },
     "2027-01-11": {

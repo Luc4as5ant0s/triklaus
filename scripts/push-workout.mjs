@@ -30,7 +30,7 @@ async function api(method, path, body) {
   if (!r.ok) throw new Error(`${method} ${path} → HTTP ${r.status} ${t.slice(0, 300)}`);
   return t ? JSON.parse(t) : null;
 }
-const mins = (s) => (s ? `${Math.round(s / 60)}′` : '?');
+const mins = (s) => (!s ? '?' : s < 60 || s % 60 ? (s < 60 ? `${s}″` : `${Math.floor(s / 60)}′${s % 60}″`) : `${s / 60}′`);
 const summary = (e) => `${e.start_date_local.slice(0, 10)}  ${e.type.padEnd(11)} ${mins(e.moving_time).padStart(5)}  load ${String(e.icu_training_load ?? '–').padStart(3)}  ${e.name}  (id ${e.id})`;
 const countSteps = (steps = []) => steps.reduce((n, s) => n + (s.steps ? (s.reps || 1) * countSteps(s.steps) : 1), 0);
 

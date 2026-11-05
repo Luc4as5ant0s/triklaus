@@ -31,3 +31,11 @@ Newest at the bottom. Each entry: what Lucas said, what changed, and why (with t
 - Deckard: easy volume under LT1 is the main ceiling lever and the hardest thing to overdo, so volume is where "as much as possible" goes. Intensity stays capped (1–3 key sessions, ≥ 85–90% under LT1 in ceiling blocks), which is what keeps it from overcooking.
 - Deckard places a VO2 block "right after a main race when there's a long runway". Florianópolis was 18 Oct, so it comes first.
 - The progression goes past his previous best only in small steps (16.0 → 17.1 → 18.2 h; 17.3 → 18.7 → 19.6 h) with a recovery week after every 3 build weeks. If HRV, sleep or motivation sag, the fix is to drop the third build week to recovery, not to cut the key sessions.
+
+## 2026-11-04 · Thursday's VO2 moves to the bike: 3 × 10 × 30/30
+
+**Lucas:** tomorrow he'll do the classic 3 × 10 × 30″ on / 30″ off on the trainer, in Zwift.
+
+**Changed:** Thu 5 Nov: hill VO2 run (5 × 3′) → bike VO2 30/30s (new library session `bike-vo2-3030`), plus the easy swim. Sent to Zwift through intervals.icu: ons 345 W, offs 160 W pedalled, 4′ easy between sets (64′). The hill run was removed from the Garmin calendar.
+
+**Why:** both target the ceiling, so the week's VO2 dose is unchanged; doing both on one day would be two key sessions. The ons sit at ~107% of 5′ power (321 W), slightly above the 30/15 range because the 30″ rest is longer. The offs are pedalled at ~50% (Deckard: never coast, or it turns glycolytic).
