@@ -74,6 +74,14 @@
     <div id="blocks-body"></div>
   </div></section>
 
+  <section id="coach"><div class="wrap">
+    <header><div><div class="lbl">Strengths · gaps · how you adapt</div><h2>Coach's read</h2></div></header>
+    <div class="grid2" style="align-items:start">
+      <div class="card log"><div class="body" id="coach-model"></div></div>
+      <div><div class="lbl" style="margin-bottom:8px">Latest check-ins</div><div class="log" id="coach-journal"></div></div>
+    </div>
+  </div></section>
+
   <section id="physio"><div class="wrap">
     <header><div><div class="lbl">What the blocks are built on</div><h2>Physiology</h2></div></header>
     <div class="grid3" id="profile"></div>
@@ -505,7 +513,19 @@
       D.zones.map((z) => `<tr><td><i class="dot" style="background:${cvar(ZONE_EMPH[z.z] || 'test')}"></i> <b class="mono">${esc(z.z)}</b><div class="muted" style="font-size:12px">${esc(z.name)}</div></td>
         <td class="num mono">${esc(z.bike)}</td><td class="num mono">${esc(z.run)}</td><td class="num mono">${esc(z.swim)}</td><td class="sec">${esc(z.note)}</td></tr>`).join('') + '</tbody>';
   }
-  const md = (t) => esc(t).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>').split(/\n{2,}/).map((p) => (/^- /m.test(p) ? `<ul>${p.split('\n').map((l) => `<li>${l.replace(/^- /, '')}</li>`).join('')}</ul>` : `<p>${p.replace(/\n/g, ' ')}</p>`)).join('');
+  // markdown-lite: paragraphs, **bold**, *italic*, `code`, - bullets, ### headings, | tables |
+  const inline = (t) => t.replace(/\*\*(.+?)\*\*/g, '<b>$1</b>').replace(/\*(.+?)\*/g, '<i>$1</i>').replace(/`(.+?)`/g, '<code>$1</code>');
+  const md = (t) => esc(t).split(/\n{2,}/).map((blk) => {
+    const lines = blk.split('\n');
+    if (lines.every((l) => l.trim().startsWith('|'))) {
+      const rows = lines.filter((l) => !/^\s*\|[\s|:-]+\|\s*$/.test(l)).map((l) => l.trim().replace(/^\||\|$/g, '').split('|').map((c) => inline(c.trim())));
+      return `<div class="tbl-wrap" style="margin:8px 0"><table class="tbl"><thead><tr>${rows[0].map((c) => `<th>${c}</th>`).join('')}</tr></thead><tbody>${rows.slice(1).map((r) => `<tr>${r.map((c) => `<td>${c}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+    }
+    if (/^#{1,4} /.test(blk)) return `<h4 style="margin:12px 0 4px">${inline(blk.replace(/^#+ /, ''))}</h4>`;
+    const head = lines[0].startsWith('- ') ? '' : lines.length > 1 && lines[1].startsWith('- ') ? `<p>${inline(lines.shift())}</p>` : '';
+    if (lines.every((l) => l.startsWith('- '))) return `${head}<ul>${lines.map((l) => `<li>${inline(l.slice(2))}</li>`).join('')}</ul>`;
+    return `<p>${inline(blk.replace(/\n/g, ' '))}</p>`;
+  }).join('');
   function renderLog() {
     $('#log-body').innerHTML = D.decisions.length ? [...D.decisions].reverse().map((d) => `<article><h3>${esc(d.head)}</h3><div class="body">${md(d.body)}</div></article>`).join('') : '<p class="muted">No decisions logged yet.</p>';
     $('#warn').innerHTML = D.warnings.length ? `<div class="card"><div class="lbl">Plan checks</div><ul class="warn">${D.warnings.map((w) => `<li>${esc(w)}</li>`).join('')}</ul></div>`
@@ -520,6 +540,11 @@
   }));
   TL = drawTimeline();
   scrollTimelineTo(curIdx, TL.pxw);
-  renderWeek(); renderBlocks(); renderProfile(); renderTrends(); renderZones(); renderLog();
+  const renderCoach = () => {
+    const c = D.coach || { athlete: '', journal: [] };
+    $('#coach-model').innerHTML = c.athlete ? md(c.athlete) : '<p class="muted">No athlete model yet.</p>';
+    $('#coach-journal').innerHTML = c.journal.length ? [...c.journal].reverse().map((d) => `<article><h3>${esc(d.head)}</h3><div class="body">${md(d.body)}</div></article>`).join('') : '<p class="muted">No check-ins yet.</p>';
+  };
+  renderWeek(); renderBlocks(); renderCoach(); renderProfile(); renderTrends(); renderZones(); renderLog();
   let rz; addEventListener('resize', () => { clearTimeout(rz); rz = setTimeout(() => { TL = drawTimeline(); }, 150); });
 })();

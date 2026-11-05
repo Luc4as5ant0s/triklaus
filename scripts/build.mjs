@@ -53,6 +53,10 @@ const data = {
   trends: trendsOf(acts, profile.run.lt1Hr, from, today),
   sessions: actual.sessions.slice(-400),
   warnings: check.warnings, decisions,
+  coach: {
+    athlete: (await rt('coach/athlete.md')).replace(/^# .*\n/, '').trim(),
+    journal: (await rt('coach/journal.md')).split(/^## /m).slice(1).map((c) => { const [h, ...r] = c.split('\n'); return { head: h.trim(), body: r.join('\n').trim() }; }).slice(-3),
+  },
   sync: meta ? { at: meta.syncedAt, n: acts.length } : null,
 };
 
