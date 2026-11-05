@@ -10,6 +10,7 @@ The plan is changed **by talking to Claude** in this repo. See [`CLAUDE.md`](CLA
 - `config/athlete.json`: availability + physiology profile (null = estimated from Garmin)
 - `scripts/check.mjs`: validate the plan (`--weeks`, `--week YYYY-MM-DD`)
 - `scripts/build.mjs`: build `dist/index.html` (works without Garmin data)
+- `scripts/push-workout.mjs`: send a structured workout to intervals.icu, which forwards it to Garmin Connect (watch) and Zwift
 - `scripts/sync-garmin.mjs`: pull activities from the Garmin Connect Personal API (`GARMIN_API_KEY`)
 
 ```sh

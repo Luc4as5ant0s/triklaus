@@ -46,4 +46,20 @@ Emphasis (the colour on the site): `volume`, `vo2`, `threshold`, `specific`, `ta
 5. Append to `plan/decisions.md`: `## YYYY-MM-DD · title`, then **Lucas:** what he said, **Changed:** what moved, **Why:** the physiology.
 6. Commit with a message that says what changed in training terms and **push straight to `main`**: no branches, no PRs; this repo is Lucas's own. The Action rebuilds with fresh Garmin data and deploys in ~1 min. Then summarise the change for Lucas (blocks moved, sessions changed, why). If a change touches `.github/workflows/`, push over SSH (`git@github.com:Luc4as5ant0s/triklaus.git`), because the gh token lacks the `workflow` scope.
 
+## Sending a workout to the watch or Zwift
+
+When Lucas asks for a workout ("give me tomorrow's session", "a 30/15 for Zwift now", "push this week's runs"), write it in intervals.icu workout text and run `node scripts/push-workout.mjs <file.json>` with `[{ "date", "type", "name", "text" }]`. intervals.icu (athlete i785452, key in `~/.config/intervals/key`) forwards it:
+
+- **Garmin Connect → watch**: automatic for every planned workout ("Upload planned workouts" is on). The watch may need a manual sync.
+- **Zwift**: use `"type": "VirtualRide"`. It shows under Workouts → Custom → Intervals.icu and on Zwift's home page. Only the **next 7 days** are sent, so a workout further out appears later.
+
+Writing the text (each step is `- <duration|distance> <target> [cue]`; a header line `Main set 5x` repeats the steps under it):
+- Take targets from the zones table (`zonesOf` in `scripts/lib/model.mjs` / the site's Zones section).
+- **Bike**: absolute watts, e.g. `- 65m 170-185w`, `- 15m ramp 120-170w 90rpm`. Zwift runs workouts as % of FTP, so **intervals.icu FTP (280 W) must equal Lucas's Zwift FTP**. If he changes one, change the other.
+- **Run**: easy and aerobic by HR as % of LTHR (intervals LTHR 186), e.g. `- 20m 75-87% LTHR`. Threshold and MP by absolute pace: `- 1.6km 4:05-4:10/km Pace`. Hills and VO2 by feel: an open step with a cue, `- Uphill hard, RPE 8 to 9 3m`.
+- **Rests**: open steps with a cue (`- Easy jog 60s`), not `0%`.
+- **No nested repeats**: write 3 × (10 × 30/15) as three `10x` blocks with the 3′ recovery steps between them.
+
+The script replaces a same-name workout on the same day and prints how many steps intervals.icu parsed: 0 steps means bad syntax. `--show <id>` prints the parsed steps, `--list FROM [TO]` lists planned workouts, `--delete <id>` removes one. An ad-hoc workout doesn't change `plan/`, unless Lucas says it replaces the planned session.
+
 To see his actual training in a conversation, sync locally: put `GARMIN_API_KEY=...` in `.env` (gitignored) and run `node --env-file=.env scripts/sync-garmin.mjs` then `node scripts/build.mjs`. Raw data stays in `data/raw/` (gitignored, never commit it).
