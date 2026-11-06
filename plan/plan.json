@@ -381,14 +381,21 @@
       }
     },
     "2026-11-02": {
-      "note": "First VO2 week. Tuesday's 20′ TT gives LT2 and replaces the 30/15s this week. After it, enter all test results in config/athlete.json (or just tell Claude the numbers). Thursday: run hills swapped for 3 × 10 × 30/30 on the trainer (Lucas's call). Friday: the hill VO2 run comes back the day after the 30/30s (Lucas felt great); the LT1 ride is dropped this week.",
+      "note": "First VO2 week. Tuesday's 20′ TT gives LT2 and replaces the 30/15s this week. After it, enter all test results in config/athlete.json (or just tell Claude the numbers). Thursday: run hills swapped for 3 × 10 × 30/30 on the trainer (Lucas's call). Friday: the hill VO2 run comes back the day after the 30/30s (Lucas felt great); the LT1 ride is dropped this week. Friday became a track 10 × 200 m (≈ 3:00/km, HR to 200) instead of hills. Weekend: easy only, with no brick run and the long run cut to 80′, to absorb two hard days.",
       "days": {
         "tue": [
           "bike-test-20",
           { "id": "run-easy", "min": 35 }
         ],
         "thu": ["bike-vo2-3030", "swim-easy"],
-        "fri": ["run-hills-vo2", "swim-easy"]
+        "fri": ["run-hills-vo2", "swim-easy"],
+        "sat": [
+          { "id": "bike-long", "min": 180 }
+        ],
+        "sun": [
+          { "id": "run-long", "min": 80 },
+          "swim-easy"
+        ]
       }
     },
     "2027-01-11": {
@@ -456,6 +463,16 @@
     },
     "2026-12-21": {
       "note": "Christmas recovery week. Move days around freely."
+    },
+    "2026-11-09": {
+      "note": "Profile tests at last: Tuesday 5′ bike all-out (Zwift), Thursday 1 mile TT on the track. They replace this week's 30/15s and hill reps; both are VO2-level efforts anyway. The 20′ TT follows next week.",
+      "days": {
+        "tue": [
+          "bike-test-5",
+          { "id": "run-easy", "min": 35 }
+        ],
+        "thu": ["run-test-mile", "swim-easy"]
+      }
     }
   }
 }

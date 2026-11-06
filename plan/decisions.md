@@ -47,3 +47,17 @@ Newest at the bottom. Each entry: what Lucas said, what changed, and why (with t
 **Changed:** Fri 6 Nov: LT1 ride → hill VO2 run (5 × 3′ uphill, RPE 8–9) plus an easy swim. The LT1 ride is dropped this week.
 
 **Why:** inside a VO2 block, stacking VO2 sessions on consecutive days is what Rønnestad-style high-intensity blocks do, and going bike then run spreads the muscular load. Hills keep the VO2 stimulus with low impact. Guardrails: ≥ 7 h sleep, a normal warm-up, and stop at 3 reps if his legs are flat. The weekend stays easy to absorb it.
+
+## 2026-11-06 · Easy weekend after two hard days; profile tests next week
+
+**Lucas:** did a track 10 × 200 / 200 (≈ 3:00/km) instead of the hill VO2. Asked whether he overdid it and what's next.
+
+**Changed:**
+- Sat 7 Nov: long ride without the brick run.
+- Sun 8 Nov: long run 100′ → 80′, plus an easy swim.
+- Week of 9 Nov: Tue 30/15s → **5′ bike test**; Thu hill VO2 → **1-mile TT**.
+
+**Why:**
+- The 200s were glycolytic: well above VO2max pace, on top of yesterday's 30/30s. The fix is easy volume now, not more intensity.
+- The tests have been pending since October, and Friday's speed suggests the estimated run anchors (vVO2 ≈ 3:37/km, mile ≈ 5:49) are too conservative. Real anchors set the right pace for the rest of the VO2 block.
+- Both tests are VO2-level efforts, so the block's stimulus is kept.

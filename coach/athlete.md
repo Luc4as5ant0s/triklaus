@@ -7,6 +7,7 @@ The coach's current read. Updated after check-ins and tests. Each line says how 
 - **Known:** race execution at half distance: 70.3 Florianópolis 4:27:35 (18 Oct 2026) off that block.
 - **Likely:** good bike utilization. Estimated LT2 ≈ 250 W is ~78% of 5′ power (321 W), above Deckard's ~75% standard, so VLamax is probably not high. *Estimate; the Nov tests decide.*
 - **Likely:** easy-running economy improving. Run efficiency (m/min per bpm on easy runs) rose from ~1.22 (Jun–Jul) to ~1.32 (Sep–Oct 2026).
+- **Likely:** good run speed reserve. 9 × 200 m at 35–38 s (≈ 3:00/km), even and with no fade, the day after a bike VO2 session (6 Nov 2026). The estimated vVO2max (3:37/km) is probably too slow; the mile test settles it.
 
 **Weaknesses / gaps**
 - **Likely:** run durability for a marathon. 2026 long runs topped out at ~90′; the 2025 marathon (3:32) averaged HR 176, high for a marathon effort, which suggests fading or pacing above what the aerobic base supported.
@@ -16,7 +17,8 @@ The coach's current read. Updated after check-ins and tests. Each line says how 
 
 **How he responds (fill in as we learn)**
 - Recovery after VO2 blocks: unknown. Watch HRV and the 30/15 or 30/30 "on" power across weeks 1→3.
-- Back-to-back VO2 (bike 30/30 → run hills the next day): first tried 5–6 Nov 2026. Record reps completed, RPE and the next 2 days' HRV and resting HR.
+- Back-to-back hard days (bike 30/30 on 5 Nov → track 10 × 200 on 6 Nov): reps even, RPE 8, feel good; HRV 92 → 98, resting HR 43 → 44, 8h33 sleep. Next: check 7–8 Nov HRV, resting HR and legs.
+- **Hypothesis:** when he feels good he goes harder than prescribed: easy runs drift to LT1, and the 6 Nov hill session became 200s at ~800–1500 m pace. Prescribe VO2 runs with explicit pace caps, and check compliance after.
 - Response to volume jumps: unknown above 18 h/wk. Watch HRV trend, resting HR, sleep and motivation in the durability block (Jan–Feb).
 - Heat: Porto Alegre summer (Dec–Mar) raises HR ~10 bpm at the same effort. Use RPE and power, and don't read heat as lost fitness.
 
@@ -34,3 +36,4 @@ The coach's current read. Updated after check-ins and tests. Each line says how 
 - Real LT1 / LT2 (bike and run): lab lactate test, or the Nov field tests.
 - Body weight (for W/kg) and Zwift FTP (must equal intervals.icu FTP, currently 280 W).
 - LTHR: Garmin 190 vs intervals.icu 186. Settle it with a 30′ run TT or the lab.
+- **Known:** max HR ≥ 203 (203 seen on 6 Nov 2026; 199–200 on several 200 m reps). intervals.icu uses 205.
