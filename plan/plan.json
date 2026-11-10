@@ -208,8 +208,8 @@
       "pattern": ["t"],
       "week": "base-volume",
       "emphasis": "test",
-      "focus": "Repeat the profile tests: 5′ bike, 1 mile, 400 m, 20′ TT",
-      "why": "Did the ceiling move? The LT2 : ceiling gap decides how much threshold the marathon block needs.",
+      "focus": "Optional retest (5′ bike, 1 mile, 400 m, 20′ TT), only if a result would change the marathon block; otherwise read the profile from training data",
+      "why": "Threshold paces for the marathon block are the one place where a real anchor changes decisions. If training data (best 5′/20′, recent race or hard-session paces) already answers it, skip the tests.",
       "success": "Profile updated; marathon block adjusted to it"
     },
     {
@@ -465,15 +465,25 @@
       "note": "Christmas recovery week. Move days around freely."
     },
     "2026-11-09": {
-      "note": "Hard days: Tue 5′ bike test, Thu 1-mile TT, Fri 30/15s (only if resting HR and HRV are normal Friday morning and the legs are OK; otherwise a 90′ LT1 ride). Wed is easy with strides. The weekend is easy: rides capped at ~185 W, run HR ≤ ~155. The 20′ TT is next Tuesday.",
+      "note": "No formal tests: Lucas would rather train, and the result wouldn't change this block. Hard days: Tue 30/15s on the bike, Thu 6 × 800 with a 3:30/km cap. Wed and Fri easy/steady. The weekend is easy: rides ≤ ~185 W, run HR ≤ ~155.",
       "days": {
         "tue": [
-          "bike-test-5",
+          "bike-vo2-3015",
           { "id": "run-easy", "min": 35 }
         ],
-        "thu": ["run-test-mile", "swim-easy"],
         "wed": ["run-easy-strides", "swim-easy"],
-        "fri": ["bike-vo2-3015", "swim-easy"]
+        "thu": [
+          {
+            "id": "run-vo2-k",
+            "set": "20′ easy + 4 strides · 6 × 800 m @ 3:30–3:40/km (never faster), 2′ jog · 15′ easy",
+            "name": "VO2 800s"
+          },
+          "swim-easy"
+        ],
+        "fri": [
+          { "id": "bike-lt1", "min": 90 },
+          "swim-easy"
+        ]
       }
     }
   }

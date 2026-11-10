@@ -65,3 +65,16 @@ Check-ins, newest at the bottom: what Lucas reported, what the data said, what w
 - **Fri:** 30/15s 3 × 11 at 345 / 160 W, only if Friday morning's resting HR and HRV are normal and his legs are OK; otherwise a 90′ LT1 ride. The 30/15 targets get re-anchored once Tuesday's 5′ result is in.
 - **Weekend:** easy, with rides ≤ ~185 W and fuelling 60–90 g/h.
 - **Asked Lucas:** fuelling and heat on Sunday's 4h28, to explain the decoupling.
+
+## 2026-11-10 · No formal tests; choppy months ahead
+
+**Lucas:** not in the mood for testing. The coming months will be choppy: travel where he'll only run, some really big volume weeks, little structure. He'd test only if it really matters.
+
+**Read:** it doesn't matter now. The block's direction (ceiling: VO2 plus easy volume) wouldn't change with the result. Training data already re-estimates the profile (best 5′/20′ power; the 200s showed run speed). VO2 work runs fine on capped targets plus RPE.
+
+**Did:**
+- Tests removed from Garmin/Zwift.
+- Week rebuilt: Tue 30/15s 3 × 11 (345 / 160 W); Wed easy + strides; Thu 6 × 800 at 3:30–3:40/km (never faster; 2′ jog); Fri LT1 ride 90′ at 170–185 W; weekend easy.
+- The February retest is now optional: only if it changes the marathon block.
+- Preference and travel context added to the athlete model.
+- **Asked Lucas:** travel dates and big-volume weeks, so the plan can carry run-only weeks.

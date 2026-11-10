@@ -81,6 +81,7 @@ Writing the text (each step is `- <duration|distance> <target> [cue]`; a header 
 - **Bike**: absolute watts, e.g. `- 65m 170-185w`, `- 15m ramp 120-170w 90rpm`. Zwift runs workouts as % of FTP, so **intervals.icu FTP (280 W) must equal Lucas's Zwift FTP**. If he changes one, change the other.
 - **Run**: easy and aerobic by HR as % of LTHR (intervals LTHR 186), e.g. `- 20m 75-87% LTHR`. Threshold and MP by absolute pace: `- 1.6km 4:05-4:10/km Pace`. Hills and VO2 by feel: an open step with a cue, `- Uphill hard, RPE 8 to 9 3m`.
 - **Rests**: open steps with a cue (`- Easy jog 60s`), not `0%`.
+- **Distances in km**: in intervals.icu syntax `m` means **minutes**, so 800 m is `0.8km`, never `800m`. A wrong parse shows up as an absurd duration in the push output.
 - **No nested repeats**: write 3 × (10 × 30/15) as three `10x` blocks with the 3′ recovery steps between them.
 
 The script replaces a same-name workout on the same day and prints how many steps intervals.icu parsed: 0 steps means bad syntax. `--show <id>` prints the parsed steps, `--list FROM [TO]` lists planned workouts, `--delete <id>` removes one. An ad-hoc workout doesn't change `plan/`, unless Lucas says it replaces the planned session.

@@ -77,3 +77,15 @@ Newest at the bottom. Each entry: what Lucas said, what changed, and why (with t
 - The two tests double as the week's VO2 sessions and give real anchors, so the rest of the block isn't built on estimates.
 - No hard Wednesday, so the mile isn't run on tired legs.
 - The weekend stays easy because Sunday's 4h28 ride showed 16% decoupling.
+
+## 2026-11-10 · Drop the formal tests; VO2 work by caps and RPE
+
+**Lucas:** doesn't want to test now. Choppy months ahead (run-only travel, big unstructured volume weeks).
+
+**Changed:**
+- Tue 5′ test → **30/15s 3 × 11**.
+- Thu mile TT → **6 × 800 @ 3:30–3:40/km**.
+- Fri 30/15s → **LT1 ride 90′**.
+- The Feb retest is optional.
+
+**Why:** a test is worth its cost only when its result changes a decision. This block's direction doesn't depend on it, and the profile keeps updating from training data. The check flags a 14% ramp vs last week's *plan*; that's kept deliberately, because last week's plan was cut short while Lucas actually trained more (4h28 ride, 1h54 run).

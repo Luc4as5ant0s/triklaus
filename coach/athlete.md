@@ -27,6 +27,10 @@ The coach's current read. Updated after check-ins and tests. Each line says how 
 - Response to volume jumps: unknown above 18 h/wk. Watch HRV trend, resting HR, sleep and motivation in the durability block (Jan–Feb).
 - Heat: Porto Alegre summer (Dec–Mar) raises HR ~10 bpm at the same effort. Use RPE and power, and don't read heat as lost fitness.
 
+**Preferences**
+- **Known:** doesn't want formal tests unless they change a decision (10 Nov 2026). Read the profile from training data (best 5′/20′ power, hard-session paces, races) and keep tests for moments that matter, like setting marathon threshold paces.
+- **Known:** the coming months are choppy: travel weeks that are run-only, some very big volume weeks, little structure. Plan in flexible blocks, and swap sessions to fit the week rather than forcing the template.
+
 **Markers we track (what "adapting" means here)**
 
 | Goal | Marker | Where | Good sign |
