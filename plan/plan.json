@@ -465,13 +465,15 @@
       "note": "Christmas recovery week. Move days around freely."
     },
     "2026-11-09": {
-      "note": "Profile tests at last: Tuesday 5′ bike all-out (Zwift), Thursday 1 mile TT on the track. They replace this week's 30/15s and hill reps; both are VO2-level efforts anyway. The 20′ TT follows next week.",
+      "note": "Hard days: Tue 5′ bike test, Thu 1-mile TT, Fri 30/15s (only if resting HR and HRV are normal Friday morning and the legs are OK; otherwise a 90′ LT1 ride). Wed is easy with strides. The weekend is easy: rides capped at ~185 W, run HR ≤ ~155. The 20′ TT is next Tuesday.",
       "days": {
         "tue": [
           "bike-test-5",
           { "id": "run-easy", "min": 35 }
         ],
-        "thu": ["run-test-mile", "swim-easy"]
+        "thu": ["run-test-mile", "swim-easy"],
+        "wed": ["run-easy-strides", "swim-easy"],
+        "fri": ["bike-vo2-3015", "swim-easy"]
       }
     }
   }

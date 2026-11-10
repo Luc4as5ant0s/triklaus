@@ -61,3 +61,19 @@ Newest at the bottom. Each entry: what Lucas said, what changed, and why (with t
 - The 200s were glycolytic: well above VO2max pace, on top of yesterday's 30/30s. The fix is easy volume now, not more intensity.
 - The tests have been pending since October, and Friday's speed suggests the estimated run anchors (vVO2 ≈ 3:37/km, mile ≈ 5:49) are too conservative. Real anchors set the right pace for the rest of the VO2 block.
 - Both tests are VO2-level efforts, so the block's stimulus is kept.
+
+## 2026-11-10 · Week 2 of the VO2 block: tests as the VO2 work, 30/15s Friday
+
+**Lucas:** wanted this week's hard rides and runs planned.
+
+**Changed:**
+- Tue: 5′ bike test (unchanged).
+- Wed: easy run + strides, plus a swim.
+- Thu: mile TT (unchanged).
+- Fri: LT1 ride → **30/15s 3 × 11**, conditional on Friday morning's markers.
+
+**Why:**
+- Three hard days, spread Tue / Thu / Fri. Thu–Fri is run then bike, and Lucas has absorbed that pattern before (5–6 Nov).
+- The two tests double as the week's VO2 sessions and give real anchors, so the rest of the block isn't built on estimates.
+- No hard Wednesday, so the mile isn't run on tired legs.
+- The weekend stays easy because Sunday's 4h28 ride showed 16% decoupling.
