@@ -89,3 +89,11 @@ Newest at the bottom. Each entry: what Lucas said, what changed, and why (with t
 - The Feb retest is optional.
 
 **Why:** a test is worth its cost only when its result changes a decision. This block's direction doesn't depend on it, and the profile keeps updating from training data. The check flags a 14% ramp vs last week's *plan*; that's kept deliberately, because last week's plan was cut short while Lucas actually trained more (4h28 ride, 1h54 run).
+
+## 2026-11-11 · 30/15s moved to Wednesday
+
+**Lucas:** missed Tuesday's ride; will do it today, with the hard run tomorrow.
+
+**Changed:** Tue → no session; Wed: 30/15s 3 × 11 + easy run with strides + swim.
+
+**Why:** keeps both of the week's VO2 sessions. Wed bike → Thu run is the bike-then-run back-to-back he handled on 5–6 Nov, and the steady Friday plus easy weekend absorb it.

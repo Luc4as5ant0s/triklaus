@@ -78,3 +78,9 @@ Check-ins, newest at the bottom: what Lucas reported, what the data said, what w
 - The February retest is now optional: only if it changes the marathon block.
 - Preference and travel context added to the athlete model.
 - **Asked Lucas:** travel dates and big-volume weeks, so the plan can carry run-only weeks.
+
+## 2026-11-11 · Missed Tuesday's ride: VO2 ride today, tough run tomorrow
+
+**Lucas:** couldn't ride on Tuesday. Today: VO2 ride plus an easy run. Tomorrow: the hard run.
+
+**Did:** 30/15s 3 × 11 moved Tue → Wed in Zwift. Thursday's 6 × 800 (cap 3:30/km) and Friday's LT1 ride are unchanged. That makes Wed → Thu back-to-back hard days (bike then run), the same pattern he absorbed on 5–6 Nov. Friday stays steady and the weekend stays easy.
