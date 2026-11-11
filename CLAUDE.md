@@ -78,7 +78,7 @@ When Lucas asks for a workout ("give me tomorrow's session", "a 30/15 for Zwift 
 
 Writing the text (each step is `- <duration|distance> <target> [cue]`; a header line `Main set 5x` repeats the steps under it):
 - Take targets from the zones table (`zonesOf` in `scripts/lib/model.mjs` / the site's Zones section).
-- **Bike**: absolute watts, e.g. `- 65m 170-185w`, `- 15m ramp 120-170w 90rpm`. Zwift runs workouts as % of FTP, so **intervals.icu FTP (280 W) must equal Lucas's Zwift FTP**. If he changes one, change the other.
+- **Bike**: absolute watts, e.g. `- 65m 170-185w`, `- 15m ramp 120-170w 90rpm`. Zwift runs workouts as % of FTP, so **intervals.icu FTP (280 W) must equal Lucas's Zwift FTP**. If he changes one, change the other. 30/15 ons come from the `VO2s` zone (~97–103% of 5′ power, ≈ 310–330 W), not the 30/30 watts: on 11 Nov 2026, 345 W failed after 6 reps.
 - **Run**: easy and aerobic by HR as % of LTHR (intervals LTHR 186), e.g. `- 20m 75-87% LTHR`. Threshold and MP by absolute pace: `- 1.6km 4:05-4:10/km Pace`. Hills and VO2 by feel: an open step with a cue, `- Uphill hard, RPE 8 to 9 3m`.
 - **Rests**: open steps with a cue (`- Easy jog 60s`), not `0%`.
 - **Distances in km**: in intervals.icu syntax `m` means **minutes**, so 800 m is `0.8km`, never `800m`. A wrong parse shows up as an absurd duration in the push output.

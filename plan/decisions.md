@@ -105,3 +105,13 @@ Newest at the bottom. Each entry: what Lucas said, what changed, and why (with t
 **Changed:** Wed: 30/15s 3 × 11 + 60′ easy at 150–175 W (~110′ total). Week ≈ 16.6 h, inside the 13–20 h range.
 
 **Why:** easy volume under LT1 is the block's main lever and the hardest thing to overdo. Riding it after the intervals trains endurance on tired legs, the gap Sunday's decoupling flagged. It's low impact, so it doesn't cost Thursday's 800s if fuelling is good.
+
+## 2026-11-11 · Lower the 30/15 target; Thursday becomes go/no-go
+
+**Lucas:** couldn't hold the 30/15s past ~6 reps; taking today easy.
+
+**Changed:**
+- `VO2s` zone: 105–115% → **97–103% of 5′ power** (≈ 310–330 W), start set 1 low.
+- Thursday's 800s get go/no-go cues and a stop-at-4 rule.
+
+**Why:** 345 W worked for 30/30s (30″ rest) but not for 30/15s (15″ rest), and the anchor (321 W, 90-day best) is probably outdoor power. Six days of heavy load and an HRV dip mean the next hard session must be earned by how the warm-up feels, not by the calendar.

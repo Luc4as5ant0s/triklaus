@@ -145,7 +145,8 @@ export function zonesOf(pr) {
     { z: 'ST', name: 'Sub-threshold · tempo', bike: W(b.lt2W * 0.85, b.lt2W * 0.92), run: r.lt2Pace ? pr2(r.lt2Pace * 1.02, r.lt2Pace * 1.05) : '–', swim: sw(1, 3), note: 'Threshold stimulus without sitting on threshold (torque work, MP→LT2 tempo).' },
     { z: 'T', name: 'Threshold · LT2', bike: W(b.lt2W * 0.9, b.lt2W), run: r.lt2Pace ? `${pr2(r.lt2Pace, r.lt2Pace * 1.03)} · HR ${r.lt2Hr ? hr(r.lt2Hr - 6, r.lt2Hr).replace(' bpm', '') : '–'}` : '–', swim: sw(-2, 2), note: '"Within 10% under is fine; 5% over is a different session" (Deckard). RPE 7–8.' },
     { z: 'VO2', name: 'VO2max · 3–5′ reps', bike: W(b.p5W * 0.92, b.p5W * 0.98), run: vv ? `${pr2(vv * 0.98, vv * 1.04)} · RPE 8–9` : 'RPE 8–9', swim: s.t400 ? `${mmss(s.t400 / 4)}/100 m` : sw(-6, -3), note: '~92% of 4′ power (Deckard). Hard but controlled.' },
-    { z: 'VO2s', name: 'VO2 · 30/15 ons', bike: W(b.p5W * 1.05, b.p5W * 1.15), run: 'RPE 9', swim: '–', note: '15″ off pedalled at ~50% of 5′ power, never coast.' },
+    // 11 Nov 2026: 345 W (107% of 5′) failed after 6 reps of 30/15 indoors; 30/30 at 345 W was completed on 5 Nov.
+    { z: 'VO2s', name: 'VO2 · 30/15 ons', bike: W(b.p5W * 0.97, b.p5W * 1.03), run: 'RPE 9', swim: '–', note: 'Start set 1 at the low end; 30/30s can go ~5% higher. 15″ off pedalled at ~50% of 5′ power, never coast.' },
     { z: 'S', name: 'Strides / sprint', bike: '–', run: '≈ mile pace, relaxed', swim: '–', note: 'Short, full recovery, so no glycolytic build-up.' },
   ];
 }

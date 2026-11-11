@@ -465,7 +465,7 @@
       "note": "Christmas recovery week. Move days around freely."
     },
     "2026-11-09": {
-      "note": "No formal tests: Lucas would rather train, and the result wouldn't change this block. Hard days: Wed 30/15s on the bike (moved from Tue, which was missed), Thu 6 × 800 with a 3:30/km cap. Wed and Fri easy/steady. The weekend is easy: rides ≤ ~185 W, run HR ≤ ~155.",
+      "note": "No formal tests: Lucas would rather train, and the result wouldn't change this block. Hard days: Wed 30/15s on the bike (moved from Tue, which was missed), Thu 6 × 800 with a 3:30/km cap. Wed and Fri easy/steady. The weekend is easy: rides ≤ ~185 W, run HR ≤ ~155. Wed: the 30/15s at 345 W were abandoned after ~6 reps (target too high plus accumulated fatigue); the rest of Wed is easy. Thu 800s are go/no-go after the warm-up.",
       "days": {
         "tue": [],
         "wed": [

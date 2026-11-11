@@ -24,6 +24,7 @@ The coach's current read. Updated after check-ins and tests. Each line says how 
   - the 6 Nov hill session became 200s at ~800–1500 m pace;
   - the 7–8 Nov weekend became a 1h54 run (80′ prescribed) and a 4h28 ride at NP 196 W (3 h at ≤ 185 W prescribed).
   Give explicit caps and conditions, and check compliance in the next briefing.
+- **Known:** 30/15 ons at 345 W (107% of the estimated 5′) failed after ~6 reps indoors on 11 Nov 2026, while 30/30 at 345 W was completed on 5 Nov. **Likely** causes: the target was too high for 15″ recoveries, plus accumulated load (5–10 Nov: 30/30, track 200s, 1h54 run, 4h28 ride, 1h13 run; HRV 89 vs 7-d mean 95). Next 30/15s at 310–330 W, starting low.
 - Response to volume jumps: unknown above 18 h/wk. Watch HRV trend, resting HR, sleep and motivation in the durability block (Jan–Feb).
 - Heat: Porto Alegre summer (Dec–Mar) raises HR ~10 bpm at the same effort. Use RPE and power, and don't read heat as lost fitness.
 

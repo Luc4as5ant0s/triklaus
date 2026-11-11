@@ -90,3 +90,20 @@ Check-ins, newest at the bottom: what Lucas reported, what the data said, what w
 **Lucas:** asked whether it makes sense to make the rides longer, e.g. another easy hour.
 
 **Did:** yes. Today's Zwift workout is now 30/15s 3 × 11 + 60′ at 150–175 W + 5′ cool-down (110′). Rules: truly easy, fuelled at 60–90 g/h, quality first. It also works on long-ride durability (8 Nov decoupling 16%). Friday's LT1 ride can be extended the same way if time allows.
+
+## 2026-11-11 · 30/15s failed after ~6 reps
+
+**Lucas:** "total failure" on the 30/15s: couldn't hold the power even after 6 reps. Taking today easy, then seeing tomorrow whether there's anything for the run.
+
+**Data:** the Zwift ride isn't in intervals.icu (Zwift activity sync is off), so there are no power numbers. HRV 89, the week's low (7-d mean 95). Resting HR 40, sleep 8h49 (score 80). Previous 6 days: 30/30s, track 200s at ~3:00/km, 1h54 run, 4h28 ride + 50′ run, 1h13 run; Tuesday missed.
+
+**Read:**
+- **Coach's error:** 345 W carried over from the 30/30s with half the recovery, and from a 5′ best that was likely outdoors.
+- **Fatigue:** the load since 5 Nov is real, and the HRV dip fits.
+- **Possible Zwift scaling** if Zwift FTP ≠ 280 W. Asked Lucas.
+
+**Did:**
+- Today easy.
+- Thu 800s re-pushed with go/no-go: in the warm-up, heavy legs or HR 10+ bpm above normal means strides and home; stop at 4 reps if RPE > 8; never faster than 3:30/km.
+- The 30/15 "on" zone is now ~97–103% of 5′ (≈ 310–330 W), start low.
+- **Asked:** the watts Zwift showed, fuelling before the session, and why Tuesday was missed.
