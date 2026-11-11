@@ -84,3 +84,9 @@ Check-ins, newest at the bottom: what Lucas reported, what the data said, what w
 **Lucas:** couldn't ride on Tuesday. Today: VO2 ride plus an easy run. Tomorrow: the hard run.
 
 **Did:** 30/15s 3 × 11 moved Tue → Wed in Zwift. Thursday's 6 × 800 (cap 3:30/km) and Friday's LT1 ride are unchanged. That makes Wed → Thu back-to-back hard days (bike then run), the same pattern he absorbed on 5–6 Nov. Friday stays steady and the weekend stays easy.
+
+## 2026-11-11 · Extra easy hour on the VO2 ride
+
+**Lucas:** asked whether it makes sense to make the rides longer, e.g. another easy hour.
+
+**Did:** yes. Today's Zwift workout is now 30/15s 3 × 11 + 60′ at 150–175 W + 5′ cool-down (110′). Rules: truly easy, fuelled at 60–90 g/h, quality first. It also works on long-ride durability (8 Nov decoupling 16%). Friday's LT1 ride can be extended the same way if time allows.

@@ -468,7 +468,12 @@
       "note": "No formal tests: Lucas would rather train, and the result wouldn't change this block. Hard days: Wed 30/15s on the bike (moved from Tue, which was missed), Thu 6 × 800 with a 3:30/km cap. Wed and Fri easy/steady. The weekend is easy: rides ≤ ~185 W, run HR ≤ ~155.",
       "days": {
         "tue": [],
-        "wed": ["bike-vo2-3015", "run-easy-strides", "swim-easy"],
+        "wed": [
+          "bike-vo2-3015",
+          { "id": "bike-easy", "min": 60 },
+          "run-easy-strides",
+          "swim-easy"
+        ],
         "thu": [
           {
             "id": "run-vo2-k",

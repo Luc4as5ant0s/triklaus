@@ -97,3 +97,11 @@ Newest at the bottom. Each entry: what Lucas said, what changed, and why (with t
 **Changed:** Tue → no session; Wed: 30/15s 3 × 11 + easy run with strides + swim.
 
 **Why:** keeps both of the week's VO2 sessions. Wed bike → Thu run is the bike-then-run back-to-back he handled on 5–6 Nov, and the steady Friday plus easy weekend absorb it.
+
+## 2026-11-11 · +1 h easy after the 30/15s
+
+**Lucas:** wanted to add an easy hour to the ride.
+
+**Changed:** Wed: 30/15s 3 × 11 + 60′ easy at 150–175 W (~110′ total). Week ≈ 16.6 h, inside the 13–20 h range.
+
+**Why:** easy volume under LT1 is the block's main lever and the hardest thing to overdo. Riding it after the intervals trains endurance on tired legs, the gap Sunday's decoupling flagged. It's low impact, so it doesn't cost Thursday's 800s if fuelling is good.

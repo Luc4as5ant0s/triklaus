@@ -29,6 +29,7 @@ The coach's current read. Updated after check-ins and tests. Each line says how 
 
 **Preferences**
 - **Known:** doesn't want formal tests unless they change a decision (10 Nov 2026). Read the profile from training data (best 5′/20′ power, hard-session paces, races) and keep tests for moments that matter, like setting marathon threshold paces.
+- **Known:** likes stacking extra easy volume onto sessions when time allows (11 Nov 2026: +1 h after the 30/15s). Default answer is yes when it comes after the quality, stays truly easy (bike ~150–175 W, run HR ≤ ~155), is fuelled at 60–90 g/h, and doesn't compromise the next key session or sleep.
 - **Known:** the coming months are choppy: travel weeks that are run-only, some very big volume weeks, little structure. Plan in flexible blocks, and swap sessions to fit the week rather than forcing the template.
 
 **Markers we track (what "adapting" means here)**
