@@ -487,6 +487,45 @@
           "swim-easy"
         ]
       }
+    },
+    "2026-11-16": {
+      "note": "Loose week, the last build of VO2 block I, sized at ~14–16 h after a ~13.5 h week. Two keys only: Wed bike 30/15s at 310–320 W (go/no-go), and Fri 800s, which only happen if Sunday is going to be easy (a group ride with surges counts as Sunday's hard session, and then Friday is an easy run). Swimming restarts: 3 × ~45′ easy. Everything else is easy with hard caps: runs HR ≤ 155, rides ≤ 185 W. Mon/Tue absorb the 14–15 Nov weekend (hard 85′ fartlek + 6h15 ride).",
+      "days": {
+        "mon": [
+          "swim-easy",
+          { "id": "strength", "min": 30 }
+        ],
+        "tue": [
+          { "id": "run-easy-strides", "min": 60 },
+          { "id": "bike-easy", "min": 60 }
+        ],
+        "wed": [
+          {
+            "id": "bike-vo2-3015",
+            "set": "15′ warm-up · 3 × (11 × 30″ @ 310–320 W / 15″ @ ~150 W, pedalled) · 3′ easy between · then 45′ at 150–175 W if the sets went well",
+            "name": "VO2 30/15s · 3×11 @ 310–320 W"
+          },
+          "run-easy"
+        ],
+        "thu": [
+          { "id": "run-easy", "min": 60 },
+          "swim-easy"
+        ],
+        "fri": [
+          {
+            "id": "run-vo2-k",
+            "set": "20′ easy + 4 strides · 6 × 800 m @ 3:35–3:45/km (never faster), 2′ jog · 15′ easy. Only if Sunday will be easy; otherwise 60′ easy.",
+            "name": "VO2 800s (if Sunday is easy)"
+          }
+        ],
+        "sat": [
+          { "id": "run-long", "min": 105 },
+          "swim-easy"
+        ],
+        "sun": [
+          { "id": "bike-long", "min": 270 }
+        ]
+      }
     }
   }
 }

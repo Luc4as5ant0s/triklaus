@@ -115,3 +115,21 @@ Newest at the bottom. Each entry: what Lucas said, what changed, and why (with t
 - Thursday's 800s get go/no-go cues and a stop-at-4 rule.
 
 **Why:** 345 W worked for 30/30s (30″ rest) but not for 30/15s (15″ rest), and the anchor (321 W, 90-day best) is probably outdoor power. Six days of heavy load and an HRV dip mean the next hard session must be earned by how the warm-up feels, not by the calendar.
+
+## 2026-11-16 · Week of 16 Nov: two keys, swim restart, hard caps on everything else
+
+**Lucas:** asked for a look at where training stands and a loose plan for the week.
+
+**Changed (week of 16 Nov, last build week of VO2 block I):**
+- Wed: 30/15s **3 × 11 at 310–320 W** (not 3 × 13) + 45′ easy if the sets went well.
+- Fri: 6 × 800 @ 3:35–3:45/km, **only if Sunday will be easy**. If Sunday is a group ride, Friday is a 60′ easy run.
+- Swimming back in: Mon, Thu, Sat (~45′ easy).
+- Mon light (swim + strength), Tue easy run + strides and an optional spin.
+- Weekend: long run 105′ (HR ≤ 155) Saturday; long ride 4h30 (≤ 185 W) Sunday.
+- About 15 h.
+
+**Why:**
+- The block's job is the bike ceiling, and only one bike VO2 session (5 Nov 30/30s) has landed in two weeks. The 30/15s get a clean retry at the lowered target before the recovery week, rather than a progression to 13 reps.
+- Intensity he adds himself is real load: the 14 Nov 85′ fartlek (HR to 196), and two long rides at NP 196 W with surges. So the week allows two keys only, and a group ride counts as one of them.
+- Easy volume stays the main lever. It's sized near last week's ~13.5 h, not the template's 16.7 h, because HRV dipped to 72 and RHR sat at 45–46 on 13–14 Nov.
+- Swimming has been at zero for four weeks.

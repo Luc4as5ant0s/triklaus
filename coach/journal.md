@@ -107,3 +107,49 @@ Check-ins, newest at the bottom: what Lucas reported, what the data said, what w
 - Thu 800s re-pushed with go/no-go: in the warm-up, heavy legs or HR 10+ bpm above normal means strides and home; stop at 4 reps if RPE > 8; never faster than 3:30/km.
 - The 30/15 "on" zone is now ~97–103% of 5′ (≈ 310–330 W), start low.
 - **Asked:** the watts Zwift showed, fuelling before the session, and why Tuesday was missed.
+
+## 2026-11-16 · State of play and a loose week
+
+**Lucas:** asked where his training stands and for a loose plan for this week.
+
+**Data (9–15 Nov):**
+- **Volume:** ~12.4 h recorded (6.1 h run, 6.3 h ride, no swim) + the Zwift ride on Wed, which isn't in intervals.icu. The week before was ~8.5 h + Zwift. Both are below the 15.6 h/wk Jul–Sep normal.
+- **Key sessions:**
+  - Wed 30/15s failed after ~6 reps.
+  - Thu: no 800s (60′ easy, HR 138–157). He took the go/no-go.
+  - Fri: LT1 ride not done; 68′ easy run instead.
+- **Easy-run drift:** Wed's 83′ run reached 162–169 bpm in the second half. Thu/Fri stayed mostly ≤ 155.
+- **Sat 14:** unplanned 85′ fartlek, 17 km. Three blocks at 4:02 / 4:17 / 3:53, then 4:20 / 4:30 / 3:58, then 5:00, with HR 176–196 (max 200). RPE 5.
+- **Sun 15:**
+  - 200 km in 6h15, NP 196 W, avg 166 W, HR 155, RPE 8, feel "good".
+  - Surges (99″ at 354 W, 47″ at 507 W). The last 76 km were at 153 W but HR 158.
+  - **Decoupling 11.3%**, vs 16.2% on 8 Nov's 4h28.
+- **Recovery:**
+  - Fri: HRV **72** after 3h38 sleep (score 36). RHR 45–46 on Fri/Sat.
+  - Sun: HRV back to 98.
+  - Today's wellness isn't in yet.
+  - intervals fitness/fatigue are still meaningless (the history import is pending).
+
+**Read:**
+- Volume is a bit under his normal. Intensity is mostly self-chosen (fartlek, group-ride surges, track 200s) and mostly running.
+- The block's real target, bike 5′ power, has had one successful session.
+- Recovery handled one bad night fine.
+- Long-ride durability looks better: lower decoupling on a longer ride, though fuelling and surges are unknown.
+
+**Did:**
+- Week of 16 Nov written as a loose override (~15 h):
+  - Mon swim + strength.
+  - Tue easy run + strides, optional spin.
+  - Wed 30/15s 3 × 11 @ 310–320 W (+45′ easy), easy run.
+  - Thu easy run + swim.
+  - Fri 800s only if Sunday is easy.
+  - Sat 105′ long run + swim.
+  - Sun 4h30 ≤ 185 W.
+- Next week (23 Nov) is the block's recovery week.
+- Nothing pushed to Garmin/Zwift yet.
+
+**Asked:**
+- Is Sunday's ride a group ride?
+- Fuelling on the 6h15.
+- Why no swimming (pool access? motivation?).
+- Travel dates.
